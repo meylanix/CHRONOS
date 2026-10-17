@@ -1,0 +1,43 @@
+{
+  "protocol_id": "holdout_v1",
+  "registered": "2026-10-17 (committed to git BEFORE any of these indicators was used to evaluate forecasting models; before the Phase 7 red-team results were read)",
+  "question": "Does any non-baseline CHRONOS forecasting model beat simple extrapolation on indicators, countries and periods that were never used to develop or evaluate it?",
+  "previously_used_for_model_evaluation": [
+    "gdp_per_capita (owid): United States and the full country panel",
+    "population (owid): World",
+    "seshat_spc (seshat): NGA panel",
+    "DEMO_SYNTHETIC_INDEX"
+  ],
+  "holdout_indicators": [
+    {"indicator": "e_pelifeex", "source": "vdem", "description": "life expectancy (V-Dem external variable)"},
+    {"indicator": "co2_per_capita", "source": "owid", "description": "CO2 per person (Global Carbon Budget via OWID)"},
+    {"indicator": "energy_per_capita", "source": "owid", "description": "primary energy per person (OWID energy)"},
+    {"indicator": "e_peaveduc", "source": "vdem", "description": "average years of education (V-Dem external variable)"},
+    {"indicator": "seshat_raw_pop", "source": "seshat", "description": "Seshat coded (not imputed) polity population, log10, century steps"}
+  ],
+  "data": {
+    "database": "built by scripts/bootstrap_data.sh on 2026-10-17",
+    "vintages_sha256": {
+      "owid/co2-data": "7f78e2b218ce4bb8c538bbec04fdc9a7982e8d40bff972e650df603899edd5f6",
+      "owid/energy-data": "266f2e2baad7975351bc9bb4aa061d22b1da9fe4c47d51d2ac6071e01e171f76",
+      "seshat Equinox2020": "48c7fbd00b6ebca4405d171e1d8e4fb2ea74a2fcd3edd0762e699e7d472f0556",
+      "vdem vdemdata 16.0": "39b412d39a061c18f20c98e4ad4d6355b05a0441df31be4ee9aec420dc3d95ea"
+    }
+  },
+  "entities": "all entities of the indicator with an ISO3/NGA identity (OWID aggregates OWID_* excluded) whose regular tail run has >= 40 observations (annual) or >= 15 observations (century data); filler observations are never scored",
+  "models_frozen": {
+    "baselines": ["naive", "drift (window 20 steps)", "log_drift (window 20)", "mean (window 30)"],
+    "candidates": ["damped_trend (window 60)", "analog_knn (lookback 5, k 7, level_penalty 0.007)", "analog_knn_sep10", "analog_knn_pooled_sep10"],
+    "note": "analog models are annual-only; for century data only baselines + damped_trend are evaluated. No hyper-parameter may be changed after this registration."
+  },
+  "horizons": {"annual": [5, 10, 20], "century": [100, 300]},
+  "origins": "every 5 years (annual) / every century (Seshat) from the first origin with >= 25 (annual) or 10 (century) observations of history",
+  "primary_comparator": "drift (window 20) — the best baseline in the earlier gdp_per_capita panel; fixed in advance, not chosen on the test data",
+  "primary_metric": "scaled absolute error |y - yhat| / s, s = in-sample mean |y_t - y_{t-h}| at the origin (MASE terms), averaged over all (entity, origin) pairs common to the candidate and the comparator",
+  "decision_rule": "A candidate 'beats' the comparator for an (indicator, horizon) cell only if the 95% CI of the mean scaled-error difference (candidate - comparator), from a bootstrap that resamples blocks of origin years (block length = horizon) jointly across all entities (2000 replications), lies entirely below 0 AND the result survives Holm correction across all candidate x indicator x horizon cells. Otherwise the result is recorded as 'no evidence of improvement'.",
+  "secondary": [
+    "empirical 80% interval coverage of every model per cell (target 0.75-0.85)",
+    "share of entities in which the candidate has lower MAE (descriptive only)"
+  ],
+  "reporting": "All cells are reported, including failures and cells with too few entities (< 10 entities or < 30 forecasts => 'insufficient data'). Results go to MODEL_SCORECARD.md regardless of outcome."
+}
