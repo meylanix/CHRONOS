@@ -44,6 +44,7 @@ class Record:
     native_hi: float | None = None
     native_level: float | None = None
     intervals: dict[float, tuple[float, float]] = field(default_factory=dict)
+    entity: str = ""
 
 
 def _scale(history: TimeSeries, horizon: int) -> float | None:
@@ -95,7 +96,7 @@ def run_forecasts(series: TimeSeries, models: Sequence[Model], cfg: BacktestConf
                 f = m.predict(hist, h, ptrunc if m.needs_panel else None)
                 if f is None or not math.isfinite(f.value):
                     continue
-                records.append(Record(m.name, h, o, f.value, actual, sc, f.lo, f.hi, f.level))
+                records.append(Record(m.name, h, o, f.value, actual, sc, f.lo, f.hi, f.level, entity=series.entity))
     _attach_empirical_intervals(records, cfg, positive=series.is_positive)
     return records
 
