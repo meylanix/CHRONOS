@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Local databases, caches and downloaded raw files never go into git.
+*.sqlite
+*.sqlite-journal
+*.db
+data/cache/
+data/raw/
+reports/
+.env
+.streamlit/secrets.toml

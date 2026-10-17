@@ -1,0 +1,3 @@
+cause_event_id,effect_event_id,mechanism,claim_type,evidence_url
+printing,web,"Analogy only: both reduced barriers to distributing information; NOT a claim that one caused the other.",analogy,
+web,chatgpt,"Research hypothesis: networked information infrastructure contributed to modern AI ecosystems; no causal identification provided here.",hypothesis,

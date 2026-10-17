@@ -1,0 +1,12 @@
+# CHRONOS configuration. Every key can be overridden by an environment variable
+# (CHRONOS_DB, CHRONOS_CACHE_DIR, ...) or a CLI flag. No secrets belong here.
+[chronos]
+db_path = "chronos.sqlite"
+cache_dir = "data/cache"          # raw downloads, content-addressed (SHA-256)
+http_timeout = 60.0
+http_retries = 3
+log_level = "INFO"
+log_format = "text"               # or "json" for structured logs
+reference_year = 2026             # the "present" for staleness checks of the state model
+scenario_dir = "scenarios"
+indicator_catalog = "config/indicators.toml"
