@@ -1,0 +1,320 @@
+# CHRONOS conditional scenarios for the world, 2026-2126.
+#
+# Model: Kaya accounting identity  CO2 = Population x GDP/person x Energy/GDP x CO2/Energy,
+# cumulative CO2 -> warming via TCRE. The identity is arithmetic, not a behavioural model:
+# outputs are the consequences of the stated assumptions, nothing more.
+#
+# All rate parameters are in % per year. Each period has low / central / high values; the
+# spread within a scenario is sampled (one quantile per parameter, persistent over periods).
+# NO PROBABILITIES ARE ASSIGNED TO SCENARIOS. The scenarios are not exhaustive.
+#
+# derive = "cagr:<variable>:<years>" replaces the first period's central value with the
+# historical compound growth rate computed from the database (variables: population,
+# gdp_per_capita, energy_intensity, carbon_intensity); low/high = central -/+ spread.
+
+[model]
+id = "world_kaya"
+reference_year = 2026
+end_year = 2126
+horizons = [5, 10, 20, 50, 100]
+samples = 400
+seed = 2026
+
+[model.base]
+population = { indicator = "population", source = "owid", entity = "World" }
+gdp = { indicator = "gdp", source = "owid", entity = "World" }
+energy = { indicator = "primary_energy_consumption", source = "owid", entity = "World" }
+co2 = { indicator = "co2", source = "owid", entity = "World" }
+cumulative_co2 = { indicator = "cumulative_co2", source = "owid", entity = "World" }
+warming = { indicator = "temperature_change_from_ghg", source = "owid", entity = "World" }
+
+[model.tcre]
+# IPCC AR6 WG1 SPM D.1.1: each 1000 GtCO2 likely causes 0.27-0.63 degC, best estimate 0.45 degC.
+low = 0.27
+central = 0.45
+high = 0.63
+unit = "degC per 1000 GtCO2"
+basis = "IPCC AR6 WG1 SPM D.1.1 (likely range). Non-CO2 forcing is held at its base-year contribution (simplification)."
+
+# ---------------------------------------------------------------------------------------------
+[[scenario]]
+id = "trend"
+name = "Continuation of recent trends"
+summary = "Recent (2010s-2020s) growth, efficiency and decarbonisation rates persist, with population growth slowing as the demographic transition continues."
+assumptions = [
+  "GDP per person grows at its recent historical rate in the first decade, then slightly slower.",
+  "Energy intensity and carbon intensity keep improving at recent rates.",
+  "Population growth declines towards zero in the second half of the century (stipulated, not projected by CHRONOS).",
+  "No large war, pandemic or financial collapse changes the trajectory.",
+]
+mechanisms = ["M_gpt", "M_jcurve"]
+mechanism_narrative = "Technology diffuses gradually; productivity gains from digital and AI tools arrive at roughly the pace observed for previous general-purpose technologies; no regime change in energy policy."
+critical_dependencies = ["Persistence of the recent productivity growth rate", "Pace of the demographic transition in Africa and South Asia", "Policy continuity on energy"]
+wildcards = ["Pandemic of 2020 scale or larger", "Great-power war", "Global financial crisis", "Abrupt AI-driven productivity jump (see ai_acceleration)"]
+
+[scenario.params.pop_growth]
+derive = "cagr:population:10"
+spread = 0.15
+periods = [
+  { until = 2035, low = 0.7, central = 0.85, high = 1.0 },
+  { until = 2050, low = 0.4, central = 0.6, high = 0.8 },
+  { until = 2075, low = 0.0, central = 0.25, high = 0.5 },
+  { until = 2126, low = -0.5, central = -0.1, high = 0.3 },
+]
+basis = "First period: computed 10-year CAGR of world population. Later periods: stipulated deceleration."
+
+[scenario.params.gdp_pc_growth]
+derive = "cagr:gdp_per_capita:12"
+spread = 0.6
+periods = [
+  { until = 2035, low = 1.4, central = 2.0, high = 2.6 },
+  { until = 2050, low = 1.0, central = 1.8, high = 2.5 },
+  { until = 2126, low = 0.5, central = 1.5, high = 2.5 },
+]
+basis = "First period: computed CAGR of world GDP per person over the last 12 observed years."
+
+[scenario.params.energy_intensity_change]
+derive = "cagr:energy_intensity:10"
+spread = 0.5
+periods = [
+  { until = 2050, low = -2.0, central = -1.5, high = -1.0 },
+  { until = 2126, low = -2.0, central = -1.2, high = -0.5 },
+]
+basis = "First period: computed CAGR of primary energy / GDP."
+
+[scenario.params.carbon_intensity_change]
+derive = "cagr:carbon_intensity:10"
+spread = 0.5
+periods = [
+  { until = 2050, low = -1.5, central = -0.8, high = -0.3 },
+  { until = 2126, low = -2.5, central = -1.2, high = -0.3 },
+]
+basis = "First period: computed CAGR of CO2 / primary energy."
+
+[[scenario.signposts]]
+label = "World GDP per person keeps growing near its recent rate"
+indicator = "gdp_per_capita"
+source = "owid"
+entity = "World"
+metric = "cagr"
+start = 2022
+end = 2030
+op = "between"
+low = 1.2
+high = 2.8
+
+[[scenario.signposts]]
+label = "World CO2 emissions roughly flat to slowly rising"
+indicator = "co2"
+source = "owid"
+entity = "World"
+metric = "cagr"
+start = 2024
+end = 2030
+op = "between"
+low = -0.5
+high = 1.5
+
+# ---------------------------------------------------------------------------------------------
+[[scenario]]
+id = "ai_acceleration"
+name = "AI-accelerated productivity growth"
+summary = "Generative and later AI systems act as a general-purpose technology whose measured payoff arrives after a J-curve delay, raising world productivity growth from the 2030s."
+assumptions = [
+  "Task-level productivity gains observed in 2023-2025 experiments generalise to a large share of tasks (a strong transfer assumption).",
+  "Complementary investment and reorganisation delay macro effects until about 2032 (J-curve).",
+  "Compute and energy supply expand fast enough; energy intensity improves more slowly because of data-centre demand.",
+  "Gains spread beyond the frontier economies.",
+]
+mechanisms = ["M_gpt", "M_jcurve", "M_tasks", "M_skill_compression", "M_info_cost"]
+mechanism_narrative = "Historical GPTs (electrification, computers) raised measured productivity only after decades of reorganisation; this scenario assumes the lag is shorter for AI and that task-level gains add up to macro gains — contrary to current macro estimates of modest effects (Acemoglu 2025) and to Danish null labour-market results (Humlum & Vestergaard 2025)."
+critical_dependencies = ["Transfer of task-level gains to whole economies", "Energy and compute supply", "Diffusion to middle-income countries", "Regulatory and institutional adaptation"]
+wildcards = ["Capability plateau of AI systems", "Severe AI-related security incident leading to restrictive regulation", "Energy supply shock", "Concentration of gains causing political backlash"]
+
+[scenario.params.pop_growth]
+periods = [
+  { until = 2035, low = 0.7, central = 0.85, high = 1.0 },
+  { until = 2050, low = 0.4, central = 0.6, high = 0.8 },
+  { until = 2075, low = 0.0, central = 0.25, high = 0.5 },
+  { until = 2126, low = -0.5, central = -0.1, high = 0.3 },
+]
+basis = "Same demographic assumptions as 'trend' (AI effects on fertility are not modelled)."
+
+[scenario.params.gdp_pc_growth]
+periods = [
+  { until = 2032, low = 1.5, central = 2.2, high = 3.0 },
+  { until = 2050, low = 2.5, central = 3.5, high = 5.0 },
+  { until = 2126, low = 1.0, central = 2.5, high = 4.0 },
+]
+basis = "Stipulated: J-curve delay, then growth above any sustained post-1950 world average."
+
+[scenario.params.energy_intensity_change]
+periods = [
+  { until = 2050, low = -1.5, central = -0.8, high = 0.0 },
+  { until = 2126, low = -2.0, central = -1.2, high = -0.5 },
+]
+basis = "Stipulated: data-centre demand slows the efficiency trend."
+
+[scenario.params.carbon_intensity_change]
+periods = [
+  { until = 2050, low = -2.0, central = -1.0, high = -0.3 },
+  { until = 2126, low = -3.0, central = -1.5, high = -0.5 },
+]
+basis = "Stipulated: similar to trend, slightly faster through cheaper clean energy R&D."
+
+[[scenario.signposts]]
+label = "World GDP per person growth accelerates above 2.8%/yr in 2026-2032"
+indicator = "gdp_per_capita"
+source = "owid"
+entity = "World"
+metric = "cagr"
+start = 2026
+end = 2032
+op = ">="
+threshold = 2.8
+
+[[scenario.signposts]]
+label = "Energy use per person grows at least 1%/yr (compute demand)"
+indicator = "energy_per_capita"
+source = "owid"
+entity = "World"
+metric = "cagr"
+start = 2026
+end = 2032
+op = ">="
+threshold = 1.0
+
+# ---------------------------------------------------------------------------------------------
+[[scenario]]
+id = "fragmentation"
+name = "Geopolitical fragmentation and slow growth"
+summary = "Trade blocs, conflict and institutional erosion lower productivity growth and slow decarbonisation."
+assumptions = [
+  "Trade and technology flows fragment into blocs; diffusion of new technologies slows.",
+  "Productivity growth falls well below its recent rate.",
+  "Climate policy weakens; carbon intensity barely improves.",
+  "Democratic backsliding observed in V-Dem data since the 2010s continues.",
+]
+mechanisms = ["M_institutional_lag", "M_authority", "M_local_advantage"]
+mechanism_narrative = "Historical diffusion depended on open exchange (printing spread through trade networks, the web through an open standard); fragmentation reverses that channel."
+critical_dependencies = ["Great-power relations", "Trade policy", "Domestic institutional quality"]
+wildcards = ["Major war", "Sovereign-debt crisis", "Breakthrough that bypasses blocs (e.g. cheap open technologies)"]
+
+[scenario.params.pop_growth]
+periods = [
+  { until = 2035, low = 0.75, central = 0.9, high = 1.05 },
+  { until = 2050, low = 0.5, central = 0.7, high = 0.9 },
+  { until = 2075, low = 0.1, central = 0.35, high = 0.6 },
+  { until = 2126, low = -0.4, central = 0.0, high = 0.4 },
+]
+basis = "Stipulated: slower demographic transition where development stalls."
+
+[scenario.params.gdp_pc_growth]
+periods = [
+  { until = 2050, low = 0.0, central = 0.8, high = 1.5 },
+  { until = 2126, low = 0.0, central = 0.8, high = 1.8 },
+]
+basis = "Stipulated: below the 1820-2022 world average."
+
+[scenario.params.energy_intensity_change]
+periods = [
+  { until = 2126, low = -1.5, central = -1.0, high = -0.3 },
+]
+basis = "Stipulated."
+
+[scenario.params.carbon_intensity_change]
+periods = [
+  { until = 2050, low = -1.0, central = -0.3, high = 0.3 },
+  { until = 2126, low = -1.5, central = -0.6, high = 0.0 },
+]
+basis = "Stipulated: weak climate policy."
+
+[[scenario.signposts]]
+label = "World GDP per person growth falls to 1%/yr or less in 2026-2032"
+indicator = "gdp_per_capita"
+source = "owid"
+entity = "World"
+metric = "cagr"
+start = 2026
+end = 2032
+op = "<="
+threshold = 1.0
+
+[[scenario.signposts]]
+label = "Population-weighted electoral democracy keeps falling (V-Dem)"
+kind = "popweight"
+indicator = "v2x_polyarchy"
+source = "vdem"
+metric = "change"
+start = 2024
+end = 2030
+op = "<="
+threshold = -0.02
+
+# ---------------------------------------------------------------------------------------------
+[[scenario]]
+id = "decarbonization"
+name = "Rapid decarbonisation"
+summary = "Carbon intensity of energy falls several times faster than in the past decades, with growth close to trend."
+assumptions = [
+  "Clean electricity and electrification scale fast; carbon intensity falls 2.5%/yr to 2035 and ~5%/yr afterwards.",
+  "Energy efficiency improves faster than trend.",
+  "Growth of GDP per person close to trend.",
+  "Negative emissions are NOT modelled (CO2 cannot fall below zero here).",
+]
+mechanisms = ["M_institutional_lag", "M_gpt", "M_info_cost"]
+mechanism_narrative = "Policy and falling costs of clean technologies drive a substitution away from fossil fuels; historical energy transitions were slow, so this requires a break with history."
+critical_dependencies = ["Cost declines of clean energy and storage", "Policy stability", "Mineral supply chains", "Grid expansion"]
+wildcards = ["Backlash against climate policy", "Major nuclear accident", "Breakthrough in storage or fusion"]
+
+[scenario.params.pop_growth]
+periods = [
+  { until = 2035, low = 0.7, central = 0.85, high = 1.0 },
+  { until = 2050, low = 0.4, central = 0.6, high = 0.8 },
+  { until = 2075, low = 0.0, central = 0.25, high = 0.5 },
+  { until = 2126, low = -0.5, central = -0.1, high = 0.3 },
+]
+basis = "Same as trend."
+
+[scenario.params.gdp_pc_growth]
+periods = [
+  { until = 2050, low = 1.2, central = 1.8, high = 2.4 },
+  { until = 2126, low = 0.5, central = 1.5, high = 2.5 },
+]
+basis = "Stipulated: close to trend."
+
+[scenario.params.energy_intensity_change]
+periods = [
+  { until = 2126, low = -3.0, central = -2.0, high = -1.2 },
+]
+basis = "Stipulated: faster efficiency gains through electrification."
+
+[scenario.params.carbon_intensity_change]
+periods = [
+  { until = 2035, low = -4.0, central = -2.5, high = -1.5 },
+  { until = 2050, low = -8.0, central = -5.0, high = -3.0 },
+  { until = 2126, low = -10.0, central = -6.0, high = -3.0 },
+]
+basis = "Stipulated: several times the historical rate of decarbonisation."
+
+[[scenario.signposts]]
+label = "World CO2 emissions fall at least 2%/yr in 2026-2032"
+indicator = "co2"
+source = "owid"
+entity = "World"
+metric = "cagr"
+start = 2026
+end = 2032
+op = "<="
+threshold = -2.0
+
+[[scenario.signposts]]
+label = "Low-carbon share of primary energy reaches 25% by 2032"
+indicator = "low_carbon_share_energy"
+source = "owid"
+entity = "World"
+metric = "level"
+start = 2032
+end = 2032
+op = ">="
+threshold = 25.0

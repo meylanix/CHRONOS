@@ -305,6 +305,7 @@ def load_series_by_id(con: sqlite3.Connection, series_id: int, as_of_year: int |
     meta = {
         "series_id": rec.series_id,
         "indicator": rec.indicator,
+        "entity_code": rec.entity_code,
         "source_id": rec.source_id,
         "source_name": src["name"] if src else rec.source_id,
         "source_license": src["license"] if src else None,

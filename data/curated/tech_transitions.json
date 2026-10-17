@@ -1,0 +1,1462 @@
+{
+ "meta": {
+  "title": "Three information-technology transitions: movable-type printing, the World Wide Web, generative AI",
+  "curator": "CHRONOS development session 2026-10-17 (AI-assisted curation; requires review by a historian/economist)",
+  "verification_policy": "Every reference marked metadata_checked had its bibliographic data (authors, venue, year, and where stated the headline numbers) checked against at least one external index or the publisher page via web search on 2026-10-17. No reference is marked content_checked: no person has yet confirmed that each cited passage supports each claim. Evidence levels are curator assessments, not outputs of CHRONOS statistics.",
+  "known_gaps": [
+   "No machine-readable diffusion series for printing is loaded (Buringh & van Zanden book-production estimates are published by OWID as a chart, but the chart API host was unreachable during development).",
+   "Generative-AI evidence covers 2022-2026 only: no long-run outcome can be observed yet.",
+   "Internet-user shares come from ITU press material; ITU revises its own estimates (2019: 54% first, later 51%)."
+  ]
+ },
+ "references": [
+  {
+   "ref_id": "eisenstein1979",
+   "ref_type": "book",
+   "authors": "Eisenstein, Elizabeth L.",
+   "year": 1979,
+   "title": "The Printing Press as an Agent of Change: Communications and Cultural Transformations in Early-Modern Europe",
+   "publisher": "Cambridge University Press",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Title/year confirmed indirectly via reviews of Johns (1998) that discuss it."
+  },
+  {
+   "ref_id": "johns1998",
+   "ref_type": "book",
+   "authors": "Johns, Adrian",
+   "year": 1998,
+   "title": "The Nature of the Book: Print and Knowledge in the Making",
+   "publisher": "University of Chicago Press",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Some reviews cite a 2000 printing. Argues that 'Eisenstein's print culture does not exist' (p. 19); fixity and authority of print were achieved, not intrinsic."
+  },
+  {
+   "ref_id": "dittmar2011",
+   "ref_type": "journal_article",
+   "authors": "Dittmar, Jeremiah E.",
+   "year": 2011,
+   "title": "Information Technology and Economic Change: The Impact of the Printing Press",
+   "venue": "Quarterly Journal of Economics 126(3): 1133-1172",
+   "doi": "10.1093/qje/qjr035",
+   "url": "https://ideas.repec.org/a/oup/qjecon/v126y2011i3p1133-1172.html",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Cities that adopted printing 1450-1500 (about 200 of over 1,000 cities) grew about 60% faster 1500-1600 than similar cities; no prior growth advantage; distance from Mainz used as instrument."
+  },
+  {
+   "ref_id": "dittmar_seabold2019",
+   "ref_type": "working_paper",
+   "authors": "Dittmar, Jeremiah; Seabold, Skipper",
+   "year": 2019,
+   "title": "New Media and Competition: Printing and Europe's Transformation after Gutenberg",
+   "venue": "CEP Discussion Paper 1600, London School of Economics",
+   "url": "https://cep.lse.ac.uk/_new/publications/abstract.asp?index=6130",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Printing output and competition in European cities 1454-1600; printer deaths as exogenous variation; business-education and Reformation content. Journal publication not confirmed."
+  },
+  {
+   "ref_id": "rubin2014",
+   "ref_type": "journal_article",
+   "authors": "Rubin, Jared",
+   "year": 2014,
+   "title": "Printing and Protestants: An Empirical Test of the Role of Printing in the Reformation",
+   "venue": "Review of Economics and Statistics 96(2): 270-286",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Bibliographic data confirmed; the headline estimate was not retrieved in this session."
+  },
+  {
+   "ref_id": "buringh_vanzanden2009",
+   "ref_type": "journal_article",
+   "authors": "Buringh, Eltjo; van Zanden, Jan Luiten",
+   "year": 2009,
+   "title": "Charting the 'Rise of the West': Manuscripts and Printed Books in Europe, A Long-Term Perspective from the Sixth through Eighteenth Centuries",
+   "venue": "Journal of Economic History 69(2): 409-445",
+   "url": "https://ideas.repec.org/a/cup/jechis/v69y2009i02p409-445_00.html",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Book production grew about 1%/yr on average over the long run; the post-1450 rise attributed mainly to lower book prices and higher literacy; authors call their figures low estimates."
+  },
+  {
+   "ref_id": "istc",
+   "ref_type": "dataset",
+   "authors": "British Library / CERL",
+   "title": "Incunabula Short Title Catalogue (ISTC)",
+   "url": "https://data.cerl.org/istc",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Edition counts depend on the snapshot (about 30,300-30,518 editions)."
+  },
+  {
+   "ref_id": "bresnahan_trajtenberg1995",
+   "ref_type": "journal_article",
+   "authors": "Bresnahan, Timothy F.; Trajtenberg, Manuel",
+   "year": 1995,
+   "title": "General purpose technologies 'Engines of growth'?",
+   "venue": "Journal of Econometrics 65(1): 83-108",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "GPTs: pervasiveness, potential for technical improvement, innovational complementarities."
+  },
+  {
+   "ref_id": "david1990",
+   "ref_type": "journal_article",
+   "authors": "David, Paul A.",
+   "year": 1990,
+   "title": "The Dynamo and the Computer: An Historical Perspective on the Modern Productivity Paradox",
+   "venue": "American Economic Review: Papers and Proceedings 80(2): 355-361",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Electrification raised factory productivity only after factories were reorganised (unit drive), decades after the dynamo appeared."
+  },
+  {
+   "ref_id": "solow1987",
+   "ref_type": "primary_source",
+   "authors": "Solow, Robert M.",
+   "year": 1987,
+   "title": "We'd better watch out (review of Cohen & Zysman, Manufacturing Matters)",
+   "venue": "New York Times Book Review, 12 July 1987, p. 36",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Source of the remark: 'You can see the computer age everywhere but in the productivity statistics.'"
+  },
+  {
+   "ref_id": "jorgenson_ho_stiroh2008",
+   "ref_type": "journal_article",
+   "authors": "Jorgenson, Dale W.; Ho, Mun S.; Stiroh, Kevin J.",
+   "year": 2008,
+   "title": "A Retrospective Look at the U.S. Productivity Growth Resurgence",
+   "venue": "Journal of Economic Perspectives 22(1): 3-24",
+   "doi": "10.1257/jep.22.1.3",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Early studies found IT relatively unimportant; after the late-1990s IT investment boom, IT investment and IT-producing-sector productivity were identified as important sources of the mid-1990s acceleration."
+  },
+  {
+   "ref_id": "brynjolfsson_rock_syverson2021",
+   "ref_type": "journal_article",
+   "authors": "Brynjolfsson, Erik; Rock, Daniel; Syverson, Chad",
+   "year": 2021,
+   "title": "The Productivity J-Curve: How Intangibles Complement General Purpose Technologies",
+   "venue": "American Economic Journal: Macroeconomics 13(1): 333-372",
+   "doi": "10.1257/mac.20180386",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Unmeasured intangible investment makes measured TFP understate growth early in a GPT's life and overstate it later; adjusted TFP 15.9% above official at end-2017 (software-driven); AI effects small but growing."
+  },
+  {
+   "ref_id": "gordon2016",
+   "ref_type": "book",
+   "authors": "Gordon, Robert J.",
+   "year": 2016,
+   "title": "The Rise and Fall of American Growth: The U.S. Standard of Living Since the Civil War",
+   "publisher": "Princeton University Press",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Argues the IT revolution had smaller effects than the great inventions of 1870-1970."
+  },
+  {
+   "ref_id": "autor_levy_murnane2003",
+   "ref_type": "journal_article",
+   "authors": "Autor, David H.; Levy, Frank; Murnane, Richard J.",
+   "year": 2003,
+   "title": "The Skill Content of Recent Technological Change: An Empirical Exploration",
+   "venue": "Quarterly Journal of Economics 118(4): 1279-1333",
+   "doi": "10.1162/003355303322552801",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Computer capital substitutes for routine cognitive and manual tasks and complements non-routine problem solving and interactive tasks (task data 1960-1998)."
+  },
+  {
+   "ref_id": "cern_public_domain1993",
+   "ref_type": "web_page",
+   "authors": "CERN",
+   "year": 1993,
+   "title": "CERN puts the World Wide Web in the public domain (CERN timeline)",
+   "url": "https://timeline.web.cern.ch/node/794",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "30 April 1993 statement relinquishing IP rights to the WWW code; CERN timeline also dates Berners-Lee's first proposal to March 1989."
+  },
+  {
+   "ref_id": "berners_lee1989",
+   "ref_type": "primary_source",
+   "authors": "Berners-Lee, Tim",
+   "year": 1989,
+   "title": "Information Management: A Proposal",
+   "publisher": "CERN",
+   "url": "https://www.w3.org/History/1989/proposal.html",
+   "verification": "unverified",
+   "notes": "Date (March 1989) confirmed via the CERN timeline; exact title not re-checked in this session."
+  },
+  {
+   "ref_id": "itu_ff2019",
+   "ref_type": "report",
+   "authors": "International Telecommunication Union",
+   "year": 2019,
+   "title": "Measuring Digital Development: Facts and Figures 2019",
+   "url": "https://www.itu.int/hub/?p=3883",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Original estimate: 4.1 billion people (about 54%) online in 2019; ITU's 2020 edition revised 2019 to about 51% (4.0 billion)."
+  },
+  {
+   "ref_id": "itu_ff2025",
+   "ref_type": "report",
+   "authors": "International Telecommunication Union",
+   "year": 2025,
+   "title": "Facts and Figures 2025 (press release of 17 November 2025)",
+   "url": "https://www.itu.int/fr/mediacentre/Pages/PR-2025-11-17-Facts-and-Figures.aspx",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "2024 estimate revised from 5.5 to 5.8 billion (71%); about 6 billion (74%) in 2025 per secondary reports of the same release - the 2025 figure was not confirmed in ITU's own text during curation."
+  },
+  {
+   "ref_id": "vaswani2017",
+   "ref_type": "working_paper",
+   "authors": "Vaswani, Ashish et al.",
+   "year": 2017,
+   "title": "Attention Is All You Need",
+   "venue": "Advances in Neural Information Processing Systems 30; arXiv:1706.03762",
+   "url": "https://arxiv.org/abs/1706.03762",
+   "verification": "unverified",
+   "notes": "Introduced the Transformer architecture."
+  },
+  {
+   "ref_id": "openai_chatgpt2022",
+   "ref_type": "web_page",
+   "authors": "OpenAI",
+   "year": 2022,
+   "title": "Introducing ChatGPT",
+   "url": "https://openai.com/index/chatgpt/",
+   "verification": "unverified",
+   "notes": "Launch announcement, 30 November 2022 (URL carried over from v0.1 example data)."
+  },
+  {
+   "ref_id": "reuters_ubs2023",
+   "ref_type": "web_page",
+   "authors": "Reuters (reporting a UBS analyst note based on Similarweb data)",
+   "year": 2023,
+   "title": "ChatGPT sets record for fastest-growing user base - analyst note",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Estimate of 100 million monthly active users in January 2023; analyst estimate, not an OpenAI disclosure."
+  },
+  {
+   "ref_id": "noy_zhang2023",
+   "ref_type": "journal_article",
+   "authors": "Noy, Shakked; Zhang, Whitney",
+   "year": 2023,
+   "title": "Experimental evidence on the productivity effects of generative artificial intelligence",
+   "venue": "Science 381(6654): 187-192",
+   "doi": "10.1126/science.adh2586",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Preregistered experiment, 453 college-educated professionals, writing tasks: time -40%, quality +18%; accuracy not fact-checked; short self-contained tasks."
+  },
+  {
+   "ref_id": "brynjolfsson_li_raymond2025",
+   "ref_type": "journal_article",
+   "authors": "Brynjolfsson, Erik; Li, Danielle; Raymond, Lindsey R.",
+   "year": 2025,
+   "title": "Generative AI at Work",
+   "venue": "Quarterly Journal of Economics 140(2)",
+   "doi": "10.1093/qje/qjae044",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "5,172 customer-support agents, staggered rollout: about +15% issues resolved per hour on average (working paper: +14%, +34% for novices); little gain for the most experienced."
+  },
+  {
+   "ref_id": "peng2023",
+   "ref_type": "working_paper",
+   "authors": "Peng, Sida; Kalliamvakou, Eirini; Cihon, Peter; Demirer, Mert",
+   "year": 2023,
+   "title": "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+   "venue": "arXiv:2302.06590",
+   "url": "https://arxiv.org/abs/2302.06590",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Controlled experiment: treated developers finished a JavaScript HTTP-server task 55.8% faster (95% CI 21-89%)."
+  },
+  {
+   "ref_id": "eloundou2024",
+   "ref_type": "journal_article",
+   "authors": "Eloundou, Tyna; Manning, Sam; Mishkin, Pamela; Rock, Daniel",
+   "year": 2024,
+   "title": "GPTs are GPTs: Labor market impact potential of LLMs",
+   "venue": "Science (2024)",
+   "doi": "10.1126/science.adj0998",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Exposure (potential), not observed effects: about 80% of US workers could have >=10% of tasks affected, about 19% >=50% (preprint figures)."
+  },
+  {
+   "ref_id": "acemoglu2025",
+   "ref_type": "journal_article",
+   "authors": "Acemoglu, Daron",
+   "year": 2025,
+   "title": "The Simple Macroeconomics of AI",
+   "venue": "Economic Policy 40(121): 13-58 (NBER WP 32487, 2024)",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Task-based estimate: no more than +0.66% TFP over 10 years, likely below +0.53% after adjusting for hard-to-learn tasks."
+  },
+  {
+   "ref_id": "bick_blandin_deming2024",
+   "ref_type": "working_paper",
+   "authors": "Bick, Alexander; Blandin, Adam; Deming, David J.",
+   "year": 2024,
+   "title": "The Rapid Adoption of Generative AI",
+   "venue": "NBER Working Paper 32966",
+   "url": "https://www.nber.org/papers/w32966",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Sept 2024 version: 39% of US adults 18-64 had used generative AI by August 2024, faster than PC and internet adoption; Feb 2025 revision softens the PC comparison for work use ('as fast as')."
+  },
+  {
+   "ref_id": "humlum_vestergaard2025",
+   "ref_type": "working_paper",
+   "authors": "Humlum, Anders; Vestergaard, Emilie",
+   "year": 2025,
+   "title": "Large Language Models, Small Labor Market Effects",
+   "venue": "NBER Working Paper 33777",
+   "url": "https://ideas.repec.org/p/nbr/nberwo/33777.html",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Danish surveys linked to administrative records (25,000 workers, 11 exposed occupations): precise null effects on earnings and hours; effects larger than 2% two years after ruled out (an earlier version: 1%)."
+  },
+  {
+   "ref_id": "eu_ai_act2024",
+   "ref_type": "primary_source",
+   "authors": "European Parliament and Council of the European Union",
+   "year": 2024,
+   "title": "Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)",
+   "venue": "Official Journal of the European Union, 12 July 2024 (CELEX 32024R1689)",
+   "verification": "metadata_checked",
+   "accessed": "2026-10-17",
+   "notes": "Entered into force 1 August 2024; staged application (prohibitions Feb 2025, GPAI rules Aug 2025, most provisions Aug 2026)."
+  }
+ ],
+ "mechanisms": [
+  {
+   "mechanism_id": "M_info_cost",
+   "name": "Falling marginal cost of reproducing and distributing information",
+   "domain": "informational",
+   "description": "A technology cuts the cost of copying (printing), distributing (web) or producing (generative AI) text and code, expanding supply and access."
+  },
+  {
+   "mechanism_id": "M_jcurve",
+   "name": "Complementary intangible investment delays measured productivity gains (J-curve)",
+   "domain": "economic",
+   "description": "Gains from a general-purpose technology require reorganisation, skills and intangible capital; measured productivity can stagnate or fall before rising."
+  },
+  {
+   "mechanism_id": "M_tasks",
+   "name": "Task displacement and reinstatement",
+   "domain": "economic",
+   "description": "Technology substitutes for some tasks and complements others, reallocating labour across tasks and occupations; wages follow the balance of the two."
+  },
+  {
+   "mechanism_id": "M_skill_compression",
+   "name": "Uneven gains across skill levels",
+   "domain": "social",
+   "description": "Gains concentrate on less experienced workers (compression) or on skilled complements (skill bias), changing inequality."
+  },
+  {
+   "mechanism_id": "M_local_advantage",
+   "name": "Growth advantage of early-adopting places and firms",
+   "domain": "economic",
+   "description": "Places and firms that adopt early gain market access, human capital and business knowledge; advantages can persist."
+  },
+  {
+   "mechanism_id": "M_authority",
+   "name": "Contestation of established authorities and of information quality",
+   "domain": "political",
+   "description": "Cheaper dissemination lets new ideas (and misinformation) bypass gatekeepers, challenging religious, political or scientific authority."
+  },
+  {
+   "mechanism_id": "M_institutional_lag",
+   "name": "Institutional and regulatory response with a lag",
+   "domain": "political",
+   "description": "Rules, rights and censorship regimes adjust to the technology years after diffusion begins."
+  },
+  {
+   "mechanism_id": "M_gpt",
+   "name": "General-purpose technology dynamics",
+   "domain": "technological",
+   "description": "Pervasive use, continuing improvement and innovational complementarities (Bresnahan & Trajtenberg)."
+  }
+ ],
+ "events": [
+  {
+   "event_id": "p_press",
+   "title": "Movable-type printing press in Mainz (Gutenberg)",
+   "category": "invention",
+   "start_year": 1450,
+   "year_uncertainty": 5,
+   "date_precision": "approximate",
+   "region": "Europe (Mainz)",
+   "tags": [
+    "transition:printing",
+    "anchor"
+   ],
+   "description": "Starting point of European movable-type printing; dated c. 1450.",
+   "references": [
+    {
+     "ref_id": "dittmar2011",
+     "locator": "Mainz as birthplace of printing"
+    },
+    {
+     "ref_id": "eisenstein1979"
+    }
+   ]
+  },
+  {
+   "event_id": "p_diffusion",
+   "title": "Printing spreads to about 200 European cities",
+   "category": "technology_transition",
+   "start_year": 1450,
+   "end_year": 1500,
+   "date_precision": "decade",
+   "region": "Europe",
+   "tags": [
+    "transition:printing",
+    "diffusion"
+   ],
+   "description": "Presses established in about 200 of over 1,000 historic European cities between 1450 and 1500.",
+   "references": [
+    {
+     "ref_id": "dittmar2011"
+    },
+    {
+     "ref_id": "istc",
+     "locator": "about 30,000 editions printed before 1501"
+    }
+   ]
+  },
+  {
+   "event_id": "p_book_output",
+   "title": "Surge in European book production after 1450",
+   "category": "cultural",
+   "start_year": 1450,
+   "end_year": 1800,
+   "date_precision": "century",
+   "region": "Western Europe",
+   "tags": [
+    "transition:printing",
+    "outcome"
+   ],
+   "description": "Long-run book output growth of about 1%/yr; marked rise after printing.",
+   "references": [
+    {
+     "ref_id": "buringh_vanzanden2009"
+    }
+   ]
+  },
+  {
+   "event_id": "p_city_growth",
+   "title": "Faster growth of early-printing cities, 1500-1600",
+   "category": "demographic",
+   "start_year": 1500,
+   "end_year": 1600,
+   "date_precision": "century",
+   "region": "Europe",
+   "tags": [
+    "transition:printing",
+    "outcome"
+   ],
+   "description": "Cities with presses by 1500 grew about 60% faster than similar cities 1500-1600.",
+   "references": [
+    {
+     "ref_id": "dittmar2011"
+    }
+   ]
+  },
+  {
+   "event_id": "p_reformation",
+   "title": "Protestant Reformation begins (Luther, 1517)",
+   "category": "cultural",
+   "start_year": 1517,
+   "date_precision": "year",
+   "region": "Holy Roman Empire",
+   "tags": [
+    "transition:printing",
+    "outcome"
+   ],
+   "description": "Religious and political upheaval in which printed pamphlets played a documented role.",
+   "references": [
+    {
+     "ref_id": "rubin2014"
+    },
+    {
+     "ref_id": "dittmar_seabold2019"
+    }
+   ]
+  },
+  {
+   "event_id": "e_dynamo",
+   "title": "Electrification of factories (dynamo era)",
+   "category": "technology_transition",
+   "start_year": 1880,
+   "end_year": 1930,
+   "year_uncertainty": 10,
+   "date_precision": "decade",
+   "region": "United States / Europe",
+   "tags": [
+    "transition:electrification",
+    "comparison"
+   ],
+   "description": "Productivity gains arrived only after factory layouts were redesigned around unit drive.",
+   "references": [
+    {
+     "ref_id": "david1990"
+    }
+   ]
+  },
+  {
+   "event_id": "i_computerisation",
+   "title": "Computerisation of the US economy",
+   "category": "technology_transition",
+   "start_year": 1970,
+   "end_year": 1998,
+   "date_precision": "decade",
+   "region": "United States",
+   "tags": [
+    "transition:internet",
+    "anchor"
+   ],
+   "description": "Diffusion of computer capital in US industries; the internet era builds on it.",
+   "references": [
+    {
+     "ref_id": "autor_levy_murnane2003",
+     "locator": "task data 1960-1998"
+    },
+    {
+     "ref_id": "jorgenson_ho_stiroh2008"
+    }
+   ]
+  },
+  {
+   "event_id": "i_ict_paradox",
+   "title": "Computer productivity paradox ('everywhere but in the productivity statistics')",
+   "category": "other",
+   "start_year": 1987,
+   "date_precision": "year",
+   "region": "United States",
+   "tags": [
+    "transition:internet",
+    "outcome"
+   ],
+   "description": "Rising IT investment coincided with slow measured productivity growth.",
+   "references": [
+    {
+     "ref_id": "solow1987"
+    },
+    {
+     "ref_id": "david1990"
+    }
+   ]
+  },
+  {
+   "event_id": "i_www_proposal",
+   "title": "World Wide Web proposed at CERN",
+   "category": "invention",
+   "start_year": 1989,
+   "date_precision": "month",
+   "date_detail": "1989-03",
+   "region": "CERN, Geneva",
+   "tags": [
+    "transition:internet",
+    "anchor"
+   ],
+   "references": [
+    {
+     "ref_id": "berners_lee1989"
+    },
+    {
+     "ref_id": "cern_public_domain1993",
+     "locator": "timeline: first proposal March 1989"
+    }
+   ]
+  },
+  {
+   "event_id": "i_www_public",
+   "title": "CERN puts WWW software in the public domain",
+   "category": "institutional_change",
+   "start_year": 1993,
+   "date_precision": "day",
+   "date_detail": "1993-04-30",
+   "region": "CERN, Geneva",
+   "tags": [
+    "transition:internet",
+    "anchor"
+   ],
+   "references": [
+    {
+     "ref_id": "cern_public_domain1993"
+    }
+   ]
+  },
+  {
+   "event_id": "i_us_resurgence",
+   "title": "US productivity growth resurgence (mid-1990s to early 2000s)",
+   "category": "other",
+   "start_year": 1995,
+   "end_year": 2004,
+   "year_uncertainty": 1,
+   "date_precision": "year",
+   "region": "United States",
+   "tags": [
+    "transition:internet",
+    "outcome"
+   ],
+   "references": [
+    {
+     "ref_id": "jorgenson_ho_stiroh2008"
+    }
+   ]
+  },
+  {
+   "event_id": "i_routine_decline",
+   "title": "Decline in demand for routine tasks with computerisation",
+   "category": "other",
+   "start_year": 1970,
+   "end_year": 1998,
+   "date_precision": "decade",
+   "region": "United States",
+   "tags": [
+    "transition:internet",
+    "outcome"
+   ],
+   "references": [
+    {
+     "ref_id": "autor_levy_murnane2003"
+    }
+   ]
+  },
+  {
+   "event_id": "i_half_online",
+   "title": "About half of the world population online",
+   "category": "technology_transition",
+   "start_year": 2019,
+   "year_uncertainty": 1,
+   "date_precision": "year",
+   "region": "World",
+   "tags": [
+    "transition:internet",
+    "diffusion"
+   ],
+   "description": "ITU first estimated 54% for 2019, later revised to 51%.",
+   "references": [
+    {
+     "ref_id": "itu_ff2019"
+    }
+   ]
+  },
+  {
+   "event_id": "g_transformer",
+   "title": "Transformer architecture published",
+   "category": "invention",
+   "start_year": 2017,
+   "date_precision": "month",
+   "date_detail": "2017-06",
+   "region": "Global (research)",
+   "tags": [
+    "transition:genai",
+    "anchor"
+   ],
+   "references": [
+    {
+     "ref_id": "vaswani2017"
+    }
+   ]
+  },
+  {
+   "event_id": "g_chatgpt",
+   "title": "Public launch of ChatGPT",
+   "category": "technology_transition",
+   "start_year": 2022,
+   "date_precision": "day",
+   "date_detail": "2022-11-30",
+   "region": "Global",
+   "tags": [
+    "transition:genai",
+    "anchor"
+   ],
+   "references": [
+    {
+     "ref_id": "openai_chatgpt2022"
+    },
+    {
+     "ref_id": "reuters_ubs2023",
+     "locator": "100M MAU estimate, Jan 2023"
+    }
+   ]
+  },
+  {
+   "event_id": "g_task_gains",
+   "title": "Experimental evidence of task-level productivity gains from generative AI",
+   "category": "other",
+   "start_year": 2023,
+   "end_year": 2025,
+   "date_precision": "year",
+   "region": "United States (mainly)",
+   "tags": [
+    "transition:genai",
+    "outcome"
+   ],
+   "references": [
+    {
+     "ref_id": "noy_zhang2023"
+    },
+    {
+     "ref_id": "brynjolfsson_li_raymond2025"
+    },
+    {
+     "ref_id": "peng2023"
+    }
+   ]
+  },
+  {
+   "event_id": "g_small_labor_effects",
+   "title": "No detectable effect on earnings or hours two years after adoption (Denmark)",
+   "category": "other",
+   "start_year": 2023,
+   "end_year": 2024,
+   "date_precision": "year",
+   "region": "Denmark",
+   "tags": [
+    "transition:genai",
+    "outcome"
+   ],
+   "references": [
+    {
+     "ref_id": "humlum_vestergaard2025"
+    }
+   ]
+  },
+  {
+   "event_id": "g_ai_act",
+   "title": "EU Artificial Intelligence Act enters into force",
+   "category": "regulation",
+   "start_year": 2024,
+   "date_precision": "day",
+   "date_detail": "2024-08-01",
+   "region": "European Union",
+   "tags": [
+    "transition:genai",
+    "outcome"
+   ],
+   "references": [
+    {
+     "ref_id": "eu_ai_act2024"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "c_print_cost_output",
+   "source_event_id": "p_press",
+   "mechanism_id": "M_info_cost",
+   "target_event_id": "p_book_output",
+   "relation": "causal_hypothesis",
+   "statement": "Printing lowered the cost of books, which together with rising literacy drove the post-1450 surge in book production.",
+   "evidence_level": 4,
+   "status": "supported",
+   "lag_min_years": 0,
+   "lag_max_years": 100,
+   "references": [
+    {
+     "ref_id": "buringh_vanzanden2009",
+     "stance": "supports",
+     "locator": "abstract: rise attributed to lower prices and literacy"
+    },
+    {
+     "ref_id": "johns1998",
+     "stance": "qualifies",
+     "locator": "print's authority and fixity were constructed, not automatic"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Rising literacy and urban demand (universities, laity) may have driven demand independently of the cost fall; the two are hard to separate.",
+     "ref_id": "buringh_vanzanden2009"
+    }
+   ]
+  },
+  {
+   "claim_id": "c_print_city_growth",
+   "source_event_id": "p_diffusion",
+   "mechanism_id": "M_local_advantage",
+   "target_event_id": "p_city_growth",
+   "relation": "causal_hypothesis",
+   "statement": "Early adoption of printing caused faster city growth 1500-1600 (about 60% faster than similar cities).",
+   "evidence_level": 5,
+   "status": "supported",
+   "lag_min_years": 0,
+   "lag_max_years": 150,
+   "references": [
+    {
+     "ref_id": "dittmar2011",
+     "stance": "supports",
+     "locator": "IV estimates using distance from Mainz"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Printers may have chosen already-promising locations (selection); Dittmar reports no prior growth advantage and instruments adoption with distance from Mainz."
+    },
+    {
+     "description": "The instrument would be invalid if distance from Mainz affected growth through other channels (e.g. trade networks along the Rhine)."
+    }
+   ]
+  },
+  {
+   "claim_id": "c_print_reformation",
+   "source_event_id": "p_diffusion",
+   "mechanism_id": "M_authority",
+   "target_event_id": "p_reformation",
+   "relation": "contributing_condition",
+   "statement": "Access to printing raised the likelihood that cities adopted Protestantism.",
+   "evidence_level": 4,
+   "status": "proposed",
+   "lag_min_years": 0,
+   "lag_max_years": 80,
+   "references": [
+    {
+     "ref_id": "rubin2014",
+     "stance": "supports"
+    },
+    {
+     "ref_id": "dittmar_seabold2019",
+     "stance": "supports",
+     "locator": "competition among printers and Reformation content"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Political economy of rulers and cities (fiscal and power motives) as primary drivers; printing as an amplifier rather than a cause."
+    }
+   ]
+  },
+  {
+   "claim_id": "c_print_agent_of_change",
+   "source_event_id": "p_press",
+   "mechanism_id": "M_info_cost",
+   "target_event_id": "p_book_output",
+   "relation": "causal_hypothesis",
+   "statement": "Print created a new 'print culture' (standardisation, fixity, preservation) that transformed early-modern knowledge.",
+   "evidence_level": 3,
+   "status": "contested",
+   "references": [
+    {
+     "ref_id": "eisenstein1979",
+     "stance": "supports"
+    },
+    {
+     "ref_id": "johns1998",
+     "stance": "contradicts",
+     "locator": "p. 19: 'Eisenstein's print culture does not exist'"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Fixity and credibility of print were achieved through social conventions and institutions, not by the technology itself.",
+     "ref_id": "johns1998"
+    }
+   ]
+  },
+  {
+   "claim_id": "c_dynamo_ict_analogy",
+   "source_event_id": "e_dynamo",
+   "mechanism_id": "M_jcurve",
+   "target_event_id": "i_ict_paradox",
+   "relation": "analogy",
+   "statement": "The slow productivity payoff of computers parallels electrification: gains required reorganisation and arrived with a long lag.",
+   "evidence_level": 3,
+   "status": "proposed",
+   "references": [
+    {
+     "ref_id": "david1990",
+     "stance": "supports"
+    },
+    {
+     "ref_id": "brynjolfsson_rock_syverson2021",
+     "stance": "supports",
+     "locator": "J-curve formalisation"
+    },
+    {
+     "ref_id": "gordon2016",
+     "stance": "qualifies",
+     "locator": "IT's effects smaller than earlier great inventions"
+    }
+   ]
+  },
+  {
+   "claim_id": "c_ict_resurgence",
+   "source_event_id": "i_computerisation",
+   "mechanism_id": "M_jcurve",
+   "target_event_id": "i_us_resurgence",
+   "relation": "causal_hypothesis",
+   "statement": "After a lag, IT investment and IT-producing industries drove the US productivity acceleration of the mid-1990s.",
+   "evidence_level": 4,
+   "status": "proposed",
+   "lag_min_years": 5,
+   "lag_max_years": 30,
+   "references": [
+    {
+     "ref_id": "jorgenson_ho_stiroh2008",
+     "stance": "supports"
+    },
+    {
+     "ref_id": "gordon2016",
+     "stance": "qualifies"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Much of the acceleration came from productivity in IT-producing sectors (semiconductors) rather than from internet use in the wider economy.",
+     "ref_id": "jorgenson_ho_stiroh2008"
+    },
+    {
+     "description": "Cyclical factors and measurement (unmeasured intangibles) can shift the apparent timing of gains.",
+     "ref_id": "brynjolfsson_rock_syverson2021"
+    }
+   ]
+  },
+  {
+   "claim_id": "c_ict_tasks",
+   "source_event_id": "i_computerisation",
+   "mechanism_id": "M_tasks",
+   "target_event_id": "i_routine_decline",
+   "relation": "causal_hypothesis",
+   "statement": "Computerisation substituted for routine tasks and complemented non-routine analytic and interactive work.",
+   "evidence_level": 4,
+   "status": "supported",
+   "references": [
+    {
+     "ref_id": "autor_levy_murnane2003",
+     "stance": "supports"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Trade and offshoring also reduced demand for routine tasks over the same period."
+    }
+   ]
+  },
+  {
+   "claim_id": "c_web_open_standard",
+   "source_event_id": "i_www_proposal",
+   "mechanism_id": "M_institutional_lag",
+   "target_event_id": "i_www_public",
+   "relation": "documented_claim",
+   "statement": "CERN released the WWW code into the public domain so that the web could act as an open standard.",
+   "evidence_level": 3,
+   "status": "supported",
+   "references": [
+    {
+     "ref_id": "cern_public_domain1993",
+     "stance": "supports"
+    }
+   ]
+  },
+  {
+   "claim_id": "c_web_diffusion",
+   "source_event_id": "i_www_public",
+   "mechanism_id": "M_info_cost",
+   "target_event_id": "i_half_online",
+   "relation": "contributing_condition",
+   "statement": "An open, royalty-free web standard contributed to internet diffusion reaching about half of humanity by 2019.",
+   "evidence_level": 2,
+   "status": "proposed",
+   "references": [
+    {
+     "ref_id": "cern_public_domain1993",
+     "stance": "discusses"
+    },
+    {
+     "ref_id": "itu_ff2019",
+     "stance": "discusses"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Mobile phones, falling hardware prices and telecom liberalisation were probably larger drivers of the 2000s-2010s diffusion than the web's licensing."
+    }
+   ]
+  },
+  {
+   "claim_id": "c_print_web_analogy",
+   "source_event_id": "p_press",
+   "mechanism_id": "M_info_cost",
+   "target_event_id": "i_www_public",
+   "relation": "analogy",
+   "statement": "Both printing and the web sharply lowered the cost of distributing text; this is an analogy, not a causal link.",
+   "evidence_level": 2,
+   "status": "proposed",
+   "references": [
+    {
+     "ref_id": "dittmar2011",
+     "stance": "discusses",
+     "locator": "frames printing as information technology"
+    }
+   ]
+  },
+  {
+   "claim_id": "c_transformer_chatgpt",
+   "source_event_id": "g_transformer",
+   "mechanism_id": "M_gpt",
+   "target_event_id": "g_chatgpt",
+   "relation": "contributing_condition",
+   "statement": "The Transformer architecture is the technical basis of the GPT models behind ChatGPT.",
+   "evidence_level": 2,
+   "status": "proposed",
+   "references": [
+    {
+     "ref_id": "vaswani2017",
+     "stance": "discusses"
+    },
+    {
+     "ref_id": "openai_chatgpt2022",
+     "stance": "discusses"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Compute scaling, data and reinforcement learning from human feedback were equally necessary conditions."
+    }
+   ]
+  },
+  {
+   "claim_id": "c_genai_task_gains",
+   "source_event_id": "g_chatgpt",
+   "mechanism_id": "M_skill_compression",
+   "target_event_id": "g_task_gains",
+   "relation": "causal_hypothesis",
+   "statement": "Generative AI raises productivity on specific tasks (writing, customer support, coding), with larger gains for less experienced workers.",
+   "evidence_level": 5,
+   "status": "supported",
+   "lag_min_years": 0,
+   "lag_max_years": 3,
+   "references": [
+    {
+     "ref_id": "noy_zhang2023",
+     "stance": "supports",
+     "locator": "randomised: time -40%, quality +18%"
+    },
+    {
+     "ref_id": "brynjolfsson_li_raymond2025",
+     "stance": "supports",
+     "locator": "+15% average, larger for novices"
+    },
+    {
+     "ref_id": "peng2023",
+     "stance": "supports",
+     "locator": "55.8% faster, CI 21-89%"
+    },
+    {
+     "ref_id": "humlum_vestergaard2025",
+     "stance": "qualifies",
+     "locator": "average time savings about 3% in the Danish survey (earlier version)"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "External validity: short, self-contained experimental tasks may overstate gains in real jobs; output accuracy was not always verified.",
+     "ref_id": "noy_zhang2023"
+    }
+   ]
+  },
+  {
+   "claim_id": "c_genai_small_labor",
+   "source_event_id": "g_chatgpt",
+   "mechanism_id": null,
+   "target_event_id": "g_small_labor_effects",
+   "relation": "causal_hypothesis",
+   "statement": "Two years after adoption, generative AI has not measurably changed earnings or hours in exposed occupations.",
+   "evidence_level": 4,
+   "status": "proposed",
+   "lag_min_years": 0,
+   "lag_max_years": 3,
+   "references": [
+    {
+     "ref_id": "humlum_vestergaard2025",
+     "stance": "supports"
+    },
+    {
+     "ref_id": "acemoglu2025",
+     "stance": "supports",
+     "locator": "modest macro TFP effect (<=0.66% over 10 years)"
+    },
+    {
+     "ref_id": "brynjolfsson_rock_syverson2021",
+     "stance": "qualifies",
+     "locator": "J-curve: early measured effects understate later gains"
+    },
+    {
+     "ref_id": "eloundou2024",
+     "stance": "qualifies",
+     "locator": "large exposure (potential) in the US"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Too early: complementary investment (J-curve) and reorganisation can delay effects, as with electricity and computers.",
+     "ref_id": "brynjolfsson_rock_syverson2021"
+    },
+    {
+     "description": "Denmark's institutions (wage setting, firm structure) may limit pass-through to earnings; results may not transfer to other labour markets."
+    }
+   ],
+   "notes": "No mechanism asserted: the evidence shows small effects so far, not why. The J-curve is one candidate explanation (see alternatives and c_ict_genai_analogy)."
+  },
+  {
+   "claim_id": "c_genai_regulation",
+   "source_event_id": "g_chatgpt",
+   "mechanism_id": "M_institutional_lag",
+   "target_event_id": "g_ai_act",
+   "relation": "contributing_condition",
+   "statement": "The spread of generative AI shaped the EU AI Act's rules on general-purpose AI models.",
+   "evidence_level": 2,
+   "status": "proposed",
+   "references": [
+    {
+     "ref_id": "eu_ai_act2024",
+     "stance": "discusses"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "The legislative process started before ChatGPT (Commission proposal of 2021), so the Act as a whole was not caused by generative AI; only parts may have been reshaped."
+    }
+   ]
+  },
+  {
+   "claim_id": "c_ict_genai_analogy",
+   "source_event_id": "i_ict_paradox",
+   "mechanism_id": "M_jcurve",
+   "target_event_id": "g_small_labor_effects",
+   "relation": "analogy",
+   "statement": "Small measured effects of generative AI so far resemble the early computer productivity paradox; whether a later payoff follows is unknown.",
+   "evidence_level": 2,
+   "status": "proposed",
+   "references": [
+    {
+     "ref_id": "brynjolfsson_rock_syverson2021",
+     "stance": "supports",
+     "locator": "AI effects small but growing"
+    },
+    {
+     "ref_id": "acemoglu2025",
+     "stance": "contradicts",
+     "locator": "modest long-run effect expected"
+    }
+   ]
+  },
+  {
+   "claim_id": "c_genai_info_cost",
+   "source_event_id": "g_chatgpt",
+   "mechanism_id": "M_info_cost",
+   "target_event_id": "g_task_gains",
+   "relation": "causal_hypothesis",
+   "statement": "Generative AI lowers the time cost of producing text and code on well-defined tasks (production, not only distribution, of information becomes cheaper).",
+   "evidence_level": 5,
+   "status": "supported",
+   "lag_min_years": 0,
+   "lag_max_years": 3,
+   "references": [
+    {
+     "ref_id": "noy_zhang2023",
+     "stance": "supports",
+     "locator": "writing time -40% (randomised)"
+    },
+    {
+     "ref_id": "peng2023",
+     "stance": "supports",
+     "locator": "coding task 55.8% faster (randomised)"
+    },
+    {
+     "ref_id": "humlum_vestergaard2025",
+     "stance": "qualifies",
+     "locator": "about 3% average time savings in real jobs (earlier version)"
+    }
+   ],
+   "alternatives": [
+    {
+     "description": "Time saved on drafting may be offset by checking, correcting and new tasks created by the tool (real-job time savings appear much smaller than in experiments).",
+     "ref_id": "humlum_vestergaard2025"
+    }
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "fact_id": "f_istc_editions",
+   "subject": "printing",
+   "statement": "About 30,000 editions printed before 1501 are recorded in the ISTC (30,518 as of August 2016).",
+   "value": 30518,
+   "unit": "editions",
+   "year": 1500,
+   "ref_id": "istc",
+   "uncertainty": "Count depends on catalogue snapshot (29,244-30,518 in different listings).",
+   "tags": [
+    "transition:printing"
+   ]
+  },
+  {
+   "fact_id": "f_print_cities",
+   "subject": "printing",
+   "statement": "Presses were established in about 200 of over 1,000 historic European cities between 1450 and 1500.",
+   "value": 200,
+   "unit": "cities",
+   "year": 1500,
+   "ref_id": "dittmar2011",
+   "tags": [
+    "transition:printing"
+   ]
+  },
+  {
+   "fact_id": "f_print_growth_premium",
+   "subject": "printing",
+   "statement": "Cities with presses by 1500 grew about 60% faster in 1500-1600 than otherwise similar cities.",
+   "value": 60,
+   "unit": "% faster growth",
+   "year": 1600,
+   "ref_id": "dittmar2011",
+   "uncertainty": "Later summaries express the effect as 20-78 percentage points depending on specification.",
+   "tags": [
+    "transition:printing"
+   ]
+  },
+  {
+   "fact_id": "f_book_growth",
+   "subject": "printing",
+   "statement": "European book production grew about 1% per year on average over the long run (manuscripts and printed books).",
+   "value": 1,
+   "unit": "%/yr",
+   "ref_id": "buringh_vanzanden2009",
+   "uncertainty": "Authors describe estimates as low estimates.",
+   "tags": [
+    "transition:printing"
+   ]
+  },
+  {
+   "fact_id": "f_itu_2019",
+   "subject": "internet",
+   "statement": "About half of the world population used the internet in 2019 (ITU first estimate 54%, 4.1 billion; revised to 51%, 4.0 billion).",
+   "value": 51,
+   "unit": "% of population",
+   "year": 2019,
+   "ref_id": "itu_ff2019",
+   "uncertainty": "Revised by ITU from 54% to 51%.",
+   "tags": [
+    "transition:internet"
+   ]
+  },
+  {
+   "fact_id": "f_itu_2024",
+   "subject": "internet",
+   "statement": "ITU revised its 2024 estimate of internet users to 5.8 billion (71% of the world population).",
+   "value": 71,
+   "unit": "% of population",
+   "year": 2024,
+   "ref_id": "itu_ff2025",
+   "tags": [
+    "transition:internet"
+   ]
+  },
+  {
+   "fact_id": "f_jcurve_tfp",
+   "subject": "internet",
+   "statement": "Adjusting for intangible investment, US TFP was 15.9% above official measures at end-2017 (mainly software).",
+   "value": 15.9,
+   "unit": "%",
+   "year": 2017,
+   "ref_id": "brynjolfsson_rock_syverson2021",
+   "tags": [
+    "transition:internet"
+   ]
+  },
+  {
+   "fact_id": "f_chatgpt_mau",
+   "subject": "genai",
+   "statement": "ChatGPT was estimated to have about 100 million monthly active users in January 2023, two months after launch (UBS estimate from Similarweb data, not an OpenAI figure).",
+   "value": 100000000,
+   "unit": "monthly active users",
+   "year": 2023,
+   "ref_id": "reuters_ubs2023",
+   "uncertainty": "Third-party traffic estimate.",
+   "tags": [
+    "transition:genai"
+   ]
+  },
+  {
+   "fact_id": "f_genai_adoption_us",
+   "subject": "genai",
+   "statement": "39% of US adults aged 18-64 had used generative AI by August 2024.",
+   "value": 39,
+   "unit": "% of US adults 18-64",
+   "year": 2024,
+   "ref_id": "bick_blandin_deming2024",
+   "uncertainty": "Single survey (Real-Time Population Survey, >5,000 respondents); later revision reports 'nearly 40%' for late 2024.",
+   "tags": [
+    "transition:genai"
+   ]
+  },
+  {
+   "fact_id": "f_noy_zhang",
+   "subject": "genai",
+   "statement": "In a randomised writing-task experiment, ChatGPT cut completion time by 40% and raised quality by 18%.",
+   "value": 40,
+   "unit": "% time reduction",
+   "year": 2023,
+   "ref_id": "noy_zhang2023",
+   "tags": [
+    "transition:genai"
+   ]
+  },
+  {
+   "fact_id": "f_brynjolfsson_support",
+   "subject": "genai",
+   "statement": "A generative-AI assistant raised customer-support productivity by about 15% on average, more for novices.",
+   "value": 15,
+   "unit": "% issues resolved per hour",
+   "year": 2025,
+   "ref_id": "brynjolfsson_li_raymond2025",
+   "uncertainty": "Working-paper version reported 14%.",
+   "tags": [
+    "transition:genai"
+   ]
+  },
+  {
+   "fact_id": "f_copilot",
+   "subject": "genai",
+   "statement": "Developers with GitHub Copilot completed a coding task 55.8% faster (95% CI 21-89%).",
+   "value": 55.8,
+   "unit": "% faster",
+   "year": 2023,
+   "ref_id": "peng2023",
+   "tags": [
+    "transition:genai"
+   ]
+  },
+  {
+   "fact_id": "f_acemoglu_tfp",
+   "subject": "genai",
+   "statement": "Task-based macro estimate: AI raises TFP by no more than 0.66% over 10 years (likely below 0.53%).",
+   "value": 0.66,
+   "unit": "% TFP over 10 years (upper bound)",
+   "year": 2024,
+   "ref_id": "acemoglu2025",
+   "tags": [
+    "transition:genai"
+   ]
+  },
+  {
+   "fact_id": "f_humlum",
+   "subject": "genai",
+   "statement": "Danish administrative data rule out average effects on earnings or hours larger than 2% two years after generative-AI adoption.",
+   "value": 2,
+   "unit": "% (upper bound of effect)",
+   "year": 2025,
+   "ref_id": "humlum_vestergaard2025",
+   "tags": [
+    "transition:genai"
+   ]
+  },
+  {
+   "fact_id": "f_exposure",
+   "subject": "genai",
+   "statement": "About 80% of US workers could have at least 10% of their tasks affected by LLMs (exposure, not realised impact).",
+   "value": 80,
+   "unit": "% of US workers",
+   "year": 2023,
+   "ref_id": "eloundou2024",
+   "tags": [
+    "transition:genai"
+   ]
+  }
+ ],
+ "outlook_hypotheses": [
+  {
+   "oh_id": "oh_adoption_majority",
+   "statement": "By 2035, a majority of employed adults in high-income countries use generative AI at work at least weekly.",
+   "mechanism_id": "M_info_cost",
+   "based_on_claims": [
+    "c_genai_info_cost",
+    "c_web_diffusion"
+   ],
+   "falsified_if": "Representative surveys (e.g. the Real-Time Population Survey used by Bick, Blandin & Deming) show weekly work use below 50% of employed adults in the US or EU in 2035.",
+   "check_by_year": 2035,
+   "scope": "high-income countries",
+   "notes": "Grounded in the fastest documented adoption so far (39% of US adults had tried it by Aug 2024) and in the wide diffusion of earlier information technologies; trying a tool is not routine use."
+  },
+  {
+   "oh_id": "oh_jcurve_lag",
+   "statement": "Task-level gains do not translate into a large acceleration of world GDP-per-person growth before the early 2030s.",
+   "mechanism_id": "M_jcurve",
+   "based_on_claims": [
+    "c_dynamo_ict_analogy",
+    "c_ict_resurgence",
+    "c_genai_small_labor"
+   ],
+   "falsified_if": "World GDP per person grows at 3.0%/yr or more on average over 2026-2031 (Maddison/OWID data).",
+   "check_by_year": 2033,
+   "scope": "world",
+   "signpost": {
+    "indicator": "gdp_per_capita",
+    "source": "owid",
+    "entity": "World",
+    "metric": "cagr",
+    "start": 2026,
+    "end": 2031,
+    "op": "<",
+    "threshold": 3.0
+   },
+   "notes": "Electrification and computers paid off with lags of decades; the analogy to generative AI is itself only level 2."
+  },
+  {
+   "oh_id": "oh_task_reallocation",
+   "statement": "Through 2035, labour-market effects of generative AI show up mainly as task reallocation within occupations, not as large aggregate falls in employment or hours.",
+   "mechanism_id": "M_tasks",
+   "based_on_claims": [
+    "c_ict_tasks",
+    "c_genai_small_labor"
+   ],
+   "falsified_if": "Administrative data show average falls in hours or earnings above 5% in the most exposed occupations relative to less exposed ones by 2032.",
+   "check_by_year": 2035,
+   "scope": "OECD labour markets",
+   "notes": "Not yet operationalised in CHRONOS: needs occupation-level labour data (no connector)."
+  },
+  {
+   "oh_id": "oh_local_advantage",
+   "statement": "Places and firms that adopt AI early gain a growth advantage over comparable late adopters, as early-printing cities did after 1500.",
+   "mechanism_id": "M_local_advantage",
+   "based_on_claims": [
+    "c_print_city_growth"
+   ],
+   "falsified_if": "Credible designs (instrumented adoption or staggered roll-outs) find no productivity or growth difference between early and late adopting regions/firms by 2035.",
+   "check_by_year": 2035,
+   "scope": "regions and firms",
+   "notes": "Transfer from 16th-century cities to 21st-century firms is a strong assumption; scale and market structure differ."
+  },
+  {
+   "oh_id": "oh_authority_regulation",
+   "statement": "Disputes over the authority and provenance of information intensify, and regulation keeps lagging deployment by several years.",
+   "mechanism_id": "M_authority",
+   "based_on_claims": [
+    "c_print_reformation",
+    "c_genai_regulation"
+   ],
+   "falsified_if": "NOT YET OPERATIONALISED: requires an agreed indicator of information-authority conflict; as stated the hypothesis is too vague to be falsified.",
+   "check_by_year": 2040,
+   "scope": "global",
+   "notes": "Kept to show a commonly made argument that CHRONOS cannot test in its current form."
+  }
+ ]
+}

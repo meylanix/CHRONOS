@@ -1,0 +1,203 @@
+# Civilization State Model: indicator catalogue.
+# Each entry is looked up in the database; if absent the model reports NO DATA with the
+# command that would load it. Nothing is ever filled in from memory.
+#
+# kind = "series"   : a stored series (indicator/source/entity)
+# kind = "popweight": population-weighted world mean of a country-level indicator
+#                     (weights: OWID population, joined by ISO3); coverage is reported
+# kind = "popshare" : share of world population living in countries where indicator >= threshold
+# kind = "fact"     : documented point estimates from the knowledge graph (tag)
+
+[[indicator]]
+domain = "economy"
+key = "world_gdp"
+label = "World GDP (Maddison Project Database 2023, via OWID)"
+kind = "series"
+indicator = "gdp"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "economy"
+key = "world_gdp_pc"
+label = "World GDP per capita (CHRONOS-derived: OWID gdp / population)"
+kind = "series"
+indicator = "gdp_per_capita"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "energy"
+key = "primary_energy"
+label = "World primary energy consumption"
+kind = "series"
+indicator = "primary_energy_consumption"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "energy"
+key = "energy_pc"
+label = "Primary energy per person"
+kind = "series"
+indicator = "energy_per_capita"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "energy"
+key = "low_carbon_share"
+label = "Low-carbon share of primary energy"
+kind = "series"
+indicator = "low_carbon_share_energy"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "energy"
+key = "fossil_share"
+label = "Fossil share of primary energy"
+kind = "series"
+indicator = "fossil_share_energy"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "technology_ai"
+key = "internet_users_wb"
+label = "Individuals using the Internet, % of population (World Bank WDI)"
+kind = "series"
+indicator = "IT.NET.USER.ZS"
+source = "worldbank"
+entity = "World"
+load_hint = "chronos fetch worldbank --indicator IT.NET.USER.ZS --country WLD"
+
+[[indicator]]
+domain = "technology_ai"
+key = "internet_ai_facts"
+label = "Documented point estimates: internet and generative-AI adoption"
+kind = "fact"
+tags = ["transition:internet", "transition:genai"]
+load_hint = "chronos kg import data/curated/tech_transitions.json"
+
+[[indicator]]
+domain = "demography"
+key = "world_population"
+label = "World population"
+kind = "series"
+indicator = "population"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "demography"
+key = "life_expectancy"
+label = "Life expectancy, population-weighted world mean (V-Dem external variable)"
+kind = "popweight"
+indicator = "e_pelifeex"
+source = "vdem"
+change_window = 10
+
+[[indicator]]
+domain = "political_institutions"
+key = "electoral_democracy"
+label = "Electoral democracy index (V-Dem), population-weighted world mean"
+kind = "popweight"
+indicator = "v2x_polyarchy"
+source = "vdem"
+change_window = 10
+
+[[indicator]]
+domain = "political_institutions"
+key = "share_in_democracies"
+label = "Share of world population in electoral or liberal democracies (V-Dem RoW >= 2)"
+kind = "popshare"
+indicator = "v2x_regime"
+source = "vdem"
+threshold = 2
+change_window = 10
+
+[[indicator]]
+domain = "political_institutions"
+key = "rule_of_law"
+label = "Rule of law index (V-Dem), population-weighted world mean"
+kind = "popweight"
+indicator = "v2x_rule"
+source = "vdem"
+change_window = 10
+
+[[indicator]]
+domain = "international_relations"
+key = "interstate_conflict_share"
+label = "Share of world population in countries with international armed conflict (V-Dem external e_miinteco)"
+kind = "popshare"
+indicator = "e_miinteco"
+source = "vdem"
+threshold = 1
+change_window = 10
+
+[[indicator]]
+domain = "international_relations"
+key = "civil_war_share"
+label = "Share of world population in countries with civil war (V-Dem external e_civil_war)"
+kind = "popshare"
+indicator = "e_civil_war"
+source = "vdem"
+threshold = 1
+change_window = 10
+
+[[indicator]]
+domain = "ecology"
+key = "co2"
+label = "Annual CO2 emissions (fossil + industry), World"
+kind = "series"
+indicator = "co2"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "ecology"
+key = "total_ghg"
+label = "Annual GHG emissions incl. land use (CO2-eq, GWP100)"
+kind = "series"
+indicator = "total_ghg"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "ecology"
+key = "warming_from_ghg"
+label = "Global mean surface temperature change attributed to GHG emissions (model-based, Jones et al.)"
+kind = "series"
+indicator = "temperature_change_from_ghg"
+source = "owid"
+entity = "World"
+change_window = 10
+
+[[indicator]]
+domain = "information_systems"
+key = "freedom_expression"
+label = "Freedom of expression & alternative information (V-Dem), population-weighted world mean"
+kind = "popweight"
+indicator = "v2x_freexp_altinf"
+source = "vdem"
+change_window = 10
+
+[[indicator]]
+domain = "information_systems"
+key = "gdelt_ai_news"
+label = "Share of monitored online news mentioning AI (GDELT)"
+kind = "series"
+indicator = "gdelt_news_share"
+source = "gdelt"
+entity = "World (online news monitored by GDELT)"
+load_hint = "chronos fetch gdelt --query '\"artificial intelligence\"' --end 20261001000000"

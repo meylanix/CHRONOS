@@ -75,6 +75,13 @@ class TimeSeries:
             return float(self.values[idx])
         return None
 
+    def at(self, year: int) -> float:
+        """Value at `year`; raises KeyError if the year is not observed (use get() for optional access)."""
+        v = self.get(year)
+        if v is None:
+            raise KeyError(f"{self.name}/{self.entity}: no observation for {year}")
+        return v
+
     def has_window(self, start: int, end: int, step: int = 1) -> bool:
         """True if every year start..end (inclusive, at the series step) is present."""
         needed = np.arange(start, end + 1, step)

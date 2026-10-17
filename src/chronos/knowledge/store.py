@@ -244,6 +244,43 @@ def set_claim_status(con: sqlite3.Connection, claim_id: str, status: str | None,
                     (claim_id, c["status"], new.status, c["evidence_level"], new.evidence_level, reason, utc_now()))
 
 
+@dataclass
+class OutlookHypothesis:
+    oh_id: str
+    statement: str
+    falsified_if: str
+    check_by_year: int
+    mechanism_id: str | None = None
+    based_on_claims: list[str] = field(default_factory=list)
+    signpost: dict[str, Any] | None = None
+    scope: str | None = None
+    notes: str | None = None
+    data_kind: str = "real"
+
+
+def add_outlook_hypothesis(con: sqlite3.Connection, h: OutlookHypothesis) -> None:
+    for cid in h.based_on_claims:
+        if con.execute("SELECT 1 FROM claim WHERE claim_id=?", (cid,)).fetchone() is None:
+            raise ValidationRuleError(f"{h.oh_id}: unknown claim {cid!r}")
+    if not h.falsified_if.strip():
+        raise ValidationRuleError(f"{h.oh_id}: a forward-looking hypothesis needs a falsification condition")
+    con.execute(
+        """INSERT OR REPLACE INTO outlook_hypothesis(oh_id,statement,mechanism_id,based_on_claims,falsified_if,check_by_year,
+             signpost_json,operationalised,scope,notes,data_kind,registered_utc) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",
+        (h.oh_id, h.statement, h.mechanism_id, json.dumps(h.based_on_claims), h.falsified_if, h.check_by_year,
+         json.dumps(h.signpost) if h.signpost else None, 1 if h.signpost else 0, h.scope, h.notes, h.data_kind, utc_now()))
+
+
+def list_outlook_hypotheses(con: sqlite3.Connection) -> list[dict[str, Any]]:
+    rows = _rows(con, "SELECT * FROM outlook_hypothesis ORDER BY oh_id")
+    for r in rows:
+        r["based_on_claims"] = json.loads(r["based_on_claims"])
+        r["signpost"] = json.loads(r["signpost_json"]) if r["signpost_json"] else None
+        levels = [con.execute("SELECT evidence_level FROM claim WHERE claim_id=?", (c,)).fetchone()[0] for c in r["based_on_claims"]]
+        r["basis_evidence_levels"] = levels
+    return rows
+
+
 # ----------------------------------------------------------------------------- bulk import
 
 
@@ -265,7 +302,9 @@ def import_json(con: sqlite3.Connection, path: str | Path) -> dict[str, int]:
             add_claim(con, Claim(**c))
         for f in doc.get("facts", []):
             add_fact(con, Fact(**f))
-    for k in ("references", "mechanisms", "events", "claims", "facts"):
+        for h in doc.get("outlook_hypotheses", []):
+            add_outlook_hypothesis(con, OutlookHypothesis(**h))
+    for k in ("references", "mechanisms", "events", "claims", "facts", "outlook_hypotheses"):
         counts[k] = len(doc.get(k, []))
     return counts
 
