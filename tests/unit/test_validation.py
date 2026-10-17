@@ -70,3 +70,8 @@ def test_panel_backtest_runs_and_reports_sign_test():
     h = res["horizons"]["10"]
     assert h["n_entities_scored"] == 8
     assert "analog_knn_sep10" in h["candidate_vs_best_baseline"]
+
+
+def test_dm_refuses_when_too_few_forecasts_for_horizon():
+    res = M.diebold_mariano(np.ones(14), np.zeros(14), h=20)
+    assert np.isnan(res["p_value"]) and "too few" in res["note"]

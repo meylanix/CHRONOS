@@ -1,0 +1,103 @@
+WALK-FORWARD BACKTEST  population / World  (real, 230 obs 1750–2024, unit: people)
+source: owid / owid/co2-data / population; vintage 1 retrieved 2026-10-17
+revision leakage: PRESENT
+
+── horizon 1 years: 143 common origins
+model                           n_nonoverlap  MAE        RMSE       MASE     MAPE%    cov80 
+------------------------------  ------------  ---------  ---------  -------  -------  ------
+damped_trend                    143           1.294e+06  2.574e+06  0.09629  0.03902  0.7622
+v01_log_trend (baseline)        143           2.860e+06  4.680e+06  0.2028   0.08219  0.6923
+analog_knn                      143           4.018e+06  6.762e+06  0.2768   0.1119   0.7133
+drift_20 (baseline)             143           7.115e+06  1.049e+07  0.5462   0.2223   0.7692
+log_drift_20 (baseline)         143           7.842e+06  1.103e+07  0.5061   0.2055   0.6783
+analog_knn_sep10                143           1.466e+07  2.076e+07  0.9246   0.3793   0.4586
+naive (baseline)                143           4.712e+07  5.696e+07  2.967    1.212    0.5315
+log_linear_trend_30 (baseline)  143           5.594e+07  7.668e+07  3.455    1.409    0.6154
+mean_30 (baseline)              143           6.541e+08  8.141e+08  39.32    16.07    0.3566
+best: damped_trend   best baseline: v01_log_trend
+  • damped_trend beats the best simple baseline (v01_log_trend): relative MAE 0.45, DM p=2.58e-13 (on this series and horizon only).
+  • analog_knn does NOT beat the best simple baseline (v01_log_trend); prefer the baseline.
+  • analog_knn_sep10 does NOT beat the best simple baseline (v01_log_trend); prefer the baseline.
+  • analog_knn: native 80% band covered only 25% of outcomes.
+  • analog_knn_sep10: 50% empirical interval covered 17% — miscalibrated.
+  • analog_knn_sep10: 80% empirical interval covered 46% — miscalibrated.
+  • analog_knn_sep10: 95% empirical interval covered 66% — miscalibrated.
+  • analog_knn_sep10: native 80% band covered only 50% of outcomes.
+  • naive: 50% empirical interval covered 27% — miscalibrated.
+  • naive: 80% empirical interval covered 53% — miscalibrated.
+  • naive: 95% empirical interval covered 67% — miscalibrated.
+  • log_linear_trend_30: 50% empirical interval covered 34% — miscalibrated.
+  • log_linear_trend_30: 80% empirical interval covered 62% — miscalibrated.
+  • log_linear_trend_30: 95% empirical interval covered 79% — miscalibrated.
+  • mean_30: 50% empirical interval covered 17% — miscalibrated.
+  • mean_30: 80% empirical interval covered 36% — miscalibrated.
+  • mean_30: 95% empirical interval covered 60% — miscalibrated.
+  • stability: best model per sub-period = ['damped_trend', 'damped_trend', 'damped_trend']
+
+── horizon 5 years: 139 common origins
+model                           n_nonoverlap  MAE        RMSE       MASE    MAPE%   cov80 
+------------------------------  ------------  ---------  ---------  ------  ------  ------
+damped_trend                    28            1.559e+07  2.542e+07  0.2434  0.4579  0.6978
+v01_log_trend (baseline)        28            2.260e+07  3.478e+07  0.3336  0.6279  0.6906
+analog_knn                      28            3.508e+07  5.372e+07  0.5144  0.964   0.7122
+drift_20 (baseline)             28            3.987e+07  5.887e+07  0.656   1.224   0.7698
+log_drift_20 (baseline)         28            4.540e+07  6.209e+07  0.6118  1.148   0.6259
+analog_knn_sep10                28            8.629e+07  1.177e+08  1.15    2.163   0.376 
+log_linear_trend_30 (baseline)  28            1.019e+08  1.398e+08  1.316   2.472   0.5899
+naive (baseline)                28            2.366e+08  2.855e+08  3.143   5.955   0.5108
+mean_30 (baseline)              28            8.261e+08  1.023e+09  10.53   20.02   0.3094
+best: damped_trend   best baseline: v01_log_trend
+  • damped_trend beats the best simple baseline (v01_log_trend): relative MAE 0.70, DM p=0.00316 (on this series and horizon only).
+  • analog_knn does NOT beat the best simple baseline (v01_log_trend); prefer the baseline.
+  • analog_knn_sep10 does NOT beat the best simple baseline (v01_log_trend); prefer the baseline.
+  • analog_knn: native 80% band covered only 27% of outcomes.
+  • log_drift_20: 50% empirical interval covered 32% — miscalibrated.
+  • log_drift_20: 80% empirical interval covered 63% — miscalibrated.
+  • analog_knn_sep10: 50% empirical interval covered 20% — miscalibrated.
+  • analog_knn_sep10: 80% empirical interval covered 38% — miscalibrated.
+  • analog_knn_sep10: 95% empirical interval covered 54% — miscalibrated.
+  • analog_knn_sep10: native 80% band covered only 52% of outcomes.
+  • log_linear_trend_30: 80% empirical interval covered 59% — miscalibrated.
+  • log_linear_trend_30: 95% empirical interval covered 75% — miscalibrated.
+  • naive: 50% empirical interval covered 21% — miscalibrated.
+  • naive: 80% empirical interval covered 51% — miscalibrated.
+  • naive: 95% empirical interval covered 61% — miscalibrated.
+  • mean_30: 50% empirical interval covered 12% — miscalibrated.
+  • mean_30: 80% empirical interval covered 31% — miscalibrated.
+  • mean_30: 95% empirical interval covered 51% — miscalibrated.
+  • stability: best model per sub-period = ['damped_trend', 'damped_trend', 'damped_trend']
+
+── horizon 10 years: 134 common origins
+model                           n_nonoverlap  MAE        RMSE       MASE    MAPE%  cov80 
+------------------------------  ------------  ---------  ---------  ------  -----  ------
+damped_trend                    14            4.470e+07  7.077e+07  0.3764  1.302  0.7239
+v01_log_trend (baseline)        14            5.996e+07  8.838e+07  0.4626  1.599  0.6866
+drift_20 (baseline)             14            9.045e+07  1.346e+08  0.8034  2.704  0.7687
+log_drift_20 (baseline)         14            1.048e+08  1.425e+08  0.7362  2.506  0.5896
+analog_knn                      14            1.051e+08  1.553e+08  0.7781  2.63   0.7239
+log_linear_trend_30 (baseline)  14            1.751e+08  2.393e+08  1.198   4.075  0.5224
+analog_knn_sep10                14            1.979e+08  2.584e+08  1.428   4.847  0.4174
+naive (baseline)                14            4.747e+08  5.708e+08  3.372   11.63  0.3731
+mean_30 (baseline)              14            1.039e+09  1.279e+09  7.136   24.72  0.2761
+best: damped_trend   best baseline: v01_log_trend
+  • damped_trend beats the best simple baseline (v01_log_trend): relative MAE 0.76, DM p=0.0222 (on this series and horizon only).
+  • analog_knn does NOT beat the best simple baseline (v01_log_trend); prefer the baseline.
+  • analog_knn_sep10 does NOT beat the best simple baseline (v01_log_trend); prefer the baseline.
+  • log_drift_20: 80% empirical interval covered 59% — miscalibrated.
+  • log_drift_20: 95% empirical interval covered 76% — miscalibrated.
+  • analog_knn: 95% empirical interval covered 78% — miscalibrated.
+  • analog_knn: native 80% band covered only 14% of outcomes.
+  • log_linear_trend_30: 50% empirical interval covered 32% — miscalibrated.
+  • log_linear_trend_30: 80% empirical interval covered 52% — miscalibrated.
+  • log_linear_trend_30: 95% empirical interval covered 68% — miscalibrated.
+  • analog_knn_sep10: 50% empirical interval covered 23% — miscalibrated.
+  • analog_knn_sep10: 80% empirical interval covered 42% — miscalibrated.
+  • analog_knn_sep10: 95% empirical interval covered 50% — miscalibrated.
+  • analog_knn_sep10: native 80% band covered only 40% of outcomes.
+  • naive: 50% empirical interval covered 13% — miscalibrated.
+  • naive: 80% empirical interval covered 37% — miscalibrated.
+  • naive: 95% empirical interval covered 51% — miscalibrated.
+  • mean_30: 50% empirical interval covered 7% — miscalibrated.
+  • mean_30: 80% empirical interval covered 28% — miscalibrated.
+  • mean_30: 95% empirical interval covered 34% — miscalibrated.
+  • stability: best model per sub-period = ['analog_knn', 'damped_trend', 'damped_trend']

@@ -1,0 +1,28 @@
+PANEL BACKTEST seshat_spc (seshat): 23 entities
+
+── horizon 100: 23 entities scored
+model     n_forecasts  pooled_MASE  median_abs_log_ratio  empirical_80pct_interval_coverage
+--------  -----------  -----------  --------------------  ---------------------------------
+drift     490          11.64        0.04005               0.7663                           
+naive     490          11.66        0.03667               0.7732                           
+drift_20  490          11.7         0.04214               0.756                            
+mean_30   490          23.17        0.2399                0.7595                           
+
+── horizon 300: 23 entities scored
+model     n_forecasts  pooled_MASE  median_abs_log_ratio  empirical_80pct_interval_coverage
+--------  -----------  -----------  --------------------  ---------------------------------
+drift     477          6.129        0.0806                0.7576                           
+naive     477          6.192        0.07862               0.7652                           
+drift_20  477          6.229        0.08603               0.7197                           
+mean_30   477          10.62        0.267                 0.7689                           
+
+── horizon 500: 23 entities scored
+model     n_forecasts  pooled_MASE  median_abs_log_ratio  empirical_80pct_interval_coverage
+--------  -----------  -----------  --------------------  ---------------------------------
+drift     464          5.952        0.1178                0.7246                           
+drift_20  464          6.033        0.1227                0.6992                           
+naive     464          6.054        0.1074                0.7415                           
+mean_30   464          8.995        0.2944                0.7458                           
+note: Revision leakage present for all origins (current vintages).
+note: Entities are not independent (global shocks); the sign-test p-values are optimistic.
+note: An entity is scored only where every model produced forecasts at >= 3 common origins, so demanding models (long-history analogs) restrict the sample to long annual series; rerun with fewer models for wider coverage.

@@ -1,0 +1,10 @@
+Structural breaks in level of seshat_spc/Middle Yellow River Valley: [-3000, -1600, -1000, -200, 1000]
+start_year  end_year  n   mean   sd     
+----------  --------  --  -----  -------
+-7000       -3100     40  3.511  0.06466
+-3000       -1700     14  4.633  0.1251 
+-1600       -1100     6   5.474  0.2283 
+-1000       -300      8   6.443  0.1498 
+-200        900       12  7.506  0.228  
+1000        1900      10  7.961  0.2729 
+Break years are the first year of each new regime. Locations are estimates; serial correlation in the signal can still produce extra breaks. Treat as descriptive, not causal.

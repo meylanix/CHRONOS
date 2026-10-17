@@ -65,7 +65,7 @@ def panel_walk_forward(panel: Panel, models: Sequence[Model], cfg: BacktestConfi
         ranked = sorted((n for n in names if hres["models"][n]["pooled_MASE"] is not None),
                         key=lambda n: hres["models"][n]["pooled_MASE"])
         best_base = next((n for n in ranked if n in baselines), None)
-        wins = {}
+        wins: dict[str, dict[str, Any]] = {}
         for n in names:
             if n in baselines or best_base is None:
                 continue
@@ -76,12 +76,21 @@ def panel_walk_forward(panel: Panel, models: Sequence[Model], cfg: BacktestConfi
         hres["ranking_by_pooled_MASE"] = ranked
         hres["best_baseline"] = best_base
         hres["candidate_vs_best_baseline"] = wins
-        hres["verdict"] = [
-            (f"{n} beats {w['vs']} in {w['entities_better']}/{w['entities_compared']} entities (sign test p={w['sign_test_p']:.3g})"
-             if w["sign_test_p"] is not None else f"{n}: no comparison")
-            for n, w in wins.items()
-        ]
+        verdict = []
+        for n, w in wins.items():
+            better, tot, pv = int(w["entities_better"]), int(w["entities_compared"]), w["sign_test_p"]
+            if pv is None or not tot:
+                verdict.append(f"{n}: no comparison")
+                continue
+            direction = "BETTER" if better > tot / 2 else "WORSE" if better < tot / 2 else "TIED"
+            sig = "significant" if pv < 0.05 else "not significant"
+            verdict.append(f"{n} vs {w['vs']}: lower MAE in {better}/{tot} entities -> mostly {direction} than the baseline "
+                           f"(two-sided sign test p={pv:.3g}, {sig})")
+        hres["verdict"] = verdict
         out["horizons"][str(h)] = hres
     out["notes"] = ["Revision leakage present for all origins (current vintages).",
-                    "Entities are not independent (global shocks); the sign-test p-values are optimistic."]
+                    "Entities are not independent (global shocks); the sign-test p-values are optimistic.",
+                    "An entity is scored only where every model produced forecasts at >= 3 common origins, so demanding "
+                    "models (long-history analogs) restrict the sample to long annual series; rerun with fewer models "
+                    "for wider coverage."]
     return out

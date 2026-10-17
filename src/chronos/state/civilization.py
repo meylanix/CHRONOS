@@ -75,10 +75,17 @@ def popweighted(con: sqlite3.Connection, indicator: str, source: str, threshold:
         cov.append((int(y), float(w.sum() / world.get(y, np.nan)) if y in world.index else math.nan))
     if not rows:
         raise DataError(f"No overlap between {indicator} and population")
+    src = con.execute("SELECT name, license FROM source WHERE source_id=?", (source,)).fetchone()
+    retrieved = con.execute("""SELECT MAX(v.retrieved_utc) FROM vintage v JOIN series_vintage sv USING(vintage_id)
+                               JOIN series s ON s.series_id = sv.series_id WHERE s.indicator=? AND s.source_id=?""",
+                            (indicator, source)).fetchone()[0]
     s = TimeSeries.from_pairs(rows, name=f"{indicator}_{'share' if threshold is not None else 'popweighted'}",
                               entity="World (derived)", unit="share of population" if threshold is not None else None,
                               meta={"derivation": "population-weighted" if threshold is None else f"population share with {indicator} >= {threshold}",
-                                    "coverage": dict(cov), "source_id": source})
+                                    "coverage": dict(cov), "source_id": source,
+                                    "source_name": f"{src['name'] if src else source} x OWID population (CHRONOS-derived)",
+                                    "source_license": src["license"] if src else None, "retrieved_utc": retrieved,
+                                    "source_dataset": f"{indicator} weighted by population"})
     return s
 
 

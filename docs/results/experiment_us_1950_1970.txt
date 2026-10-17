@@ -1,0 +1,14 @@
+Data known by 1950 (131 obs) -> forecast 1970; actual = 2.364e+04
+model                forecast   abs_%_error
+-------------------  ---------  -----------
+naive                1.505e+04  36.34      
+drift_20             1.904e+04  19.45      
+log_drift_20         2.048e+04  13.35      
+v01_log_trend        1.517e+04  35.82      
+log_linear_trend_30  2.031e+04  14.11      
+mean_30              1.237e+04  47.66      
+damped_trend         1.833e+04  22.45      
+analog_knn           2.11e+04   10.74      
+analog_knn_sep10     1.911e+04  19.18      
+!! Single origin (n=1): illustrates the procedure; it is NOT evidence that any model has skill.
+revision leakage: PRESENT

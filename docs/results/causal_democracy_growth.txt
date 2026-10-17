@@ -1,0 +1,13 @@
+HYPOTHESIS v2x_polyarchy__level -> gdp_per_capita__growth  controls=['population__growth']
+EVIDENCE TIER 2: predictive dependence
+  does not show: Past X helps predict Y (Granger). A common driver or anticipation can produce this.
+  - T1 not met: no significant association in changes with the expected sign.
+  - T2: 26% of units show X->Y Granger dependence.
+  - T2 caveat: Y->X dependence is also present (feedback / reverse causality).
+  - T3 not met (coef 0.005337, p=0.499).
+  - T4 not met (post-effect p=0.407, pre-trend p=0.570, placebo p=0.549).
+THREATS:
+  - Omitted time-varying confounders cannot be excluded by observational data alone.
+  - Historical series are revised and partly modelled (measurement error, back-casting); measurement error in X attenuates estimates.
+  - Reverse dependence (Y predicts X) detected.
+  - Specification choices (lags, transforms, sample) were made by the analyst; see the hypothesis registry for the number of tests run on this question.

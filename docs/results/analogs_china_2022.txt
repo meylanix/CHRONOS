@@ -1,0 +1,12 @@
+Analogs of China 2022 (features: log_gdp_pc, gdp_pc_growth_10y, pop_growth_10y, life_expectancy, log_co2_pc, electoral_democracy, rule_of_law, gdp_pc_gap_to_frontier)
+analog         distance  coverage  comparability                                               
+-------------  --------  --------  ------------------------------------------------------------
+Slovenia 1973  0.2693    0.625     comparable on demography, economy, energy, position; NO DATA
+Czechia 1968   0.2898    0.625     comparable on demography, energy, institutions; NO DATA to c
+Russia 1973    0.3132    1         comparable on demography, economy, energy, institutions, pos
+Czechia 1957   0.3183    0.625     comparable on demography, energy, institutions; NO DATA to c
+Slovenia 1969  0.3287    0.625     comparable on demography, economy, energy, position; NO DATA
+Belarus 2014   0.3288    1         comparable on demography, economy, energy, institutions, pos
+Czechia 1973   0.3328    0.875     comparable on demography, economy, energy, institutions, pos
+Iran 2011      0.3347    1         comparable on demography, economy, energy, institutions, pos
+Weighted RMS distance of standardised features over dimensions present for both; ≥60% feature coverage and ≥3 dimension groups required; one match per entity-decade.

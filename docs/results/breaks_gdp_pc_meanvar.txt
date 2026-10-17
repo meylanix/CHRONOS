@@ -1,0 +1,30 @@
+Structural breaks in growth of gdp_per_capita/Japan: [1942, 1950, 1974]
+start_year  end_year  n   mean    sd     
+----------  --------  --  ------  -------
+1886        1941      56  1.884   0.05179
+1942        1949      8   -7.017  0.1386 
+1950        1973      24  7.7     0.02352
+1974        2022      49  1.546   0.02155 (mean in %/yr)
+Break years are the first year of each new regime. Locations are estimates; serial correlation in the signal can still produce extra breaks. Treat as descriptive, not causal.
+Structural breaks in growth of gdp_per_capita/Germany: [1914, 1943, 1951, 1961]
+start_year  end_year  n   mean    sd     
+----------  --------  --  ------  -------
+1821        1913      93  1.137   0.02508
+1914        1942      29  1.469   0.08949
+1943        1950      8   -4.984  0.328  
+1951        1960      10  7.026   0.01907
+1961        2022      62  2.154   0.02143 (mean in %/yr)
+Break years are the first year of each new regime. Locations are estimates; serial correlation in the signal can still produce extra breaks. Treat as descriptive, not causal.
+Structural breaks in growth of gdp_per_capita/China: [1977]
+start_year  end_year  n   mean   sd     
+----------  --------  --  -----  -------
+1951        1976      26  2.453  0.07899
+1977        2022      46  5.482  0.02624 (mean in %/yr)
+Break years are the first year of each new regime. Locations are estimates; serial correlation in the signal can still produce extra breaks. Treat as descriptive, not causal.
+Structural breaks in growth of gdp_per_capita/United States: [1892, 1950]
+start_year  end_year  n   mean   sd     
+----------  --------  --  -----  -------
+1821        1891      71  1.342  0.03135
+1892        1949      58  1.276  0.06634
+1950        2022      73  1.872  0.02197 (mean in %/yr)
+Break years are the first year of each new regime. Locations are estimates; serial correlation in the signal can still produce extra breaks. Treat as descriptive, not causal.

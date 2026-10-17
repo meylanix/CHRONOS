@@ -1,0 +1,56 @@
+CIVILIZATION STATE — reference year 2026  (status counts: {'LAGGED': 15, 'NO DATA': 2, 'DOCUMENTED POINT ESTIMATES': 1, 'STALE': 2})
+
+## economy
+  [LAGGED] World GDP (Maddison Project Database 2023, via OWID): 1.301e+14 international-$ in 2011 prices ($) (latest available 2022; NOT a 2026 value); 2010–2022: 3.138%/yr
+  [LAGGED] World GDP per capita (CHRONOS-derived: OWID gdp / population): 1.622e+04 international-$ in 2011 prices per person (latest available 2022; NOT a 2026 value); 2010–2022: 2%/yr
+
+## energy
+  [LAGGED] World primary energy consumption: 1.767e+05 terawatt-hours (TWh) (latest available 2024; NOT a 2026 value); 2014–2024: 1.57%/yr
+     NOWCAST 2026: 1.820e+05 [80%: 1.782e+05–1.874e+05] — NOWCAST (model-based extrapolation by drift_20; not an observation)
+  [LAGGED] Primary energy per person: 2.165e+04 kilowatt-hours per person (kWh) (latest available 2024; NOT a 2026 value); 2014–2024: 0.5546%/yr
+     NOWCAST 2026: 2.191e+04 [80%: 2.129e+04–2.254e+04] — NOWCAST (model-based extrapolation by drift_20; not an observation); WARNING: its 80% interval covered only 64% in the backtest — interval too narrow
+  [LAGGED] Low-carbon share of primary energy: 18.74 % (latest available 2024; NOT a 2026 value); change since 2014: 4.709
+     NOWCAST 2026: 18.74 [80%: 18.45–19.92] — NOWCAST (model-based extrapolation by naive; not an observation); WARNING: its 80% interval covered only 50% in the backtest — interval too narrow
+  [LAGGED] Fossil share of primary energy: 81.26 % (latest available 2024; NOT a 2026 value); change since 2014: -4.709
+     NOWCAST 2026: 81.26 [80%: 80.46–81.46] — NOWCAST (model-based extrapolation by naive; not an observation); WARNING: its 80% interval covered only 36% in the backtest — interval too narrow
+
+## technology_ai
+  [NO DATA] Individuals using the Internet, % of population (World Bank WDI)  -> chronos fetch worldbank --indicator IT.NET.USER.ZS --country WLD
+  [DOCUMENTED] Documented point estimates: internet and generative-AI adoption
+     · Adjusting for intangible investment, US TFP was 15.9% above official measures at end-2017 (mainly software). [2017, STALE, ref: Brynjolfsson, Erik; Rock, Daniel; Syverson, Chad (2021) The Productivi]
+     · About half of the world population used the internet in 2019 (ITU first estimate 54%, 4.1 billion; revised to 51%, 4.0 billion). [2019, STALE, ref: International Telecommunication Union (2019) Measuring Digital Develop]
+     · ITU revised its 2024 estimate of internet users to 5.8 billion (71% of the world population). [2024, LAGGED, ref: International Telecommunication Union (2025) Facts and Figures 2025 (p]
+     · ChatGPT was estimated to have about 100 million monthly active users in January 2023, two months after launch (UBS estimate from Similarweb data, not an OpenAI figure). [2023, LAGGED, ref: Reuters (reporting a UBS analyst note based on Similarweb data) (2023)]
+     · In a randomised writing-task experiment, ChatGPT cut completion time by 40% and raised quality by 18%. [2023, LAGGED, ref: Noy, Shakked; Zhang, Whitney (2023) Experimental evidence on the produ]
+     · Developers with GitHub Copilot completed a coding task 55.8% faster (95% CI 21-89%). [2023, LAGGED, ref: Peng, Sida; Kalliamvakou, Eirini; Cihon, Peter; Demirer, Mert (2023) T]
+     · About 80% of US workers could have at least 10% of their tasks affected by LLMs (exposure, not realised impact). [2023, LAGGED, ref: Eloundou, Tyna; Manning, Sam; Mishkin, Pamela; Rock, Daniel (2024) GPT]
+     · 39% of US adults aged 18-64 had used generative AI by August 2024. [2024, LAGGED, ref: Bick, Alexander; Blandin, Adam; Deming, David J. (2024) The Rapid Adop]
+     · Task-based macro estimate: AI raises TFP by no more than 0.66% over 10 years (likely below 0.53%). [2024, LAGGED, ref: Acemoglu, Daron (2025) The Simple Macroeconomics of AI]
+     · A generative-AI assistant raised customer-support productivity by about 15% on average, more for novices. [2025, CURRENT, ref: Brynjolfsson, Erik; Li, Danielle; Raymond, Lindsey R. (2025) Generativ]
+     · Danish administrative data rule out average effects on earnings or hours larger than 2% two years after generative-AI adoption. [2025, CURRENT, ref: Humlum, Anders; Vestergaard, Emilie (2025) Large Language Models, Smal]
+
+## demography
+  [LAGGED] World population: 8.162e+09 people (latest available 2024; NOT a 2026 value); 2014–2024: 1.01%/yr
+     NOWCAST 2026: 8.328e+09 [80%: 8.311e+09–8.402e+09] — NOWCAST (model-based extrapolation by drift_20; not an observation)
+  [LAGGED] Life expectancy, population-weighted world mean (V-Dem external variable): 74.34  (latest available 2024; NOT a 2026 value); change since 2014: 1.943
+
+## political_institutions
+  [LAGGED] Electoral democracy index (V-Dem), population-weighted world mean: 0.3867  (latest available 2024; NOT a 2026 value); change since 2014: -0.08142
+  [LAGGED] Share of world population in electoral or liberal democracies (V-Dem RoW >= 2): 0.2396 share of population (latest available 2024; NOT a 2026 value); change since 2014: -0.2795
+  [LAGGED] Rule of law index (V-Dem), population-weighted world mean: 0.4277  (latest available 2024; NOT a 2026 value); change since 2014: -0.059
+
+## international_relations
+  [STALE] Share of world population in countries with international armed conflict (V-Dem external e_miinteco): 0.002646 share of population (latest available 2000 (26 years old); do not read as current); change since 1990: -0.2842
+  [STALE] Share of world population in countries with civil war (V-Dem external e_civil_war): 0.009533 share of population (latest available 2006 (20 years old); do not read as current); change since 1996: -0.06358
+
+## ecology
+  [LAGGED] Annual CO2 emissions (fossil + industry), World: 3.86e+04 million tonnes (Mt) (latest available 2024; NOT a 2026 value); 2014–2024: 0.8501%/yr
+     NOWCAST 2026: 3.96e+04 [80%: 3.774e+04–4.372e+04] — NOWCAST (model-based extrapolation by drift_20; not an observation)
+  [LAGGED] Annual GHG emissions incl. land use (CO2-eq, GWP100): 5.443e+04 million tonnes (Mt) (latest available 2024; NOT a 2026 value); 2014–2024: 0.4417%/yr
+     NOWCAST 2026: 5.543e+04 [80%: 5.363e+04–5.822e+04] — NOWCAST (model-based extrapolation by drift_20; not an observation)
+  [LAGGED] Global mean surface temperature change attributed to GHG emissions (model-based, Jones et al.): 1.678 °C (latest available 2024; NOT a 2026 value); change since 2014: 0.235
+     NOWCAST 2026: 1.731 [80%: 1.689–1.735] — NOWCAST (model-based extrapolation by log_drift_20; not an observation); WARNING: its 80% interval covered only 65% in the backtest — interval too narrow
+
+## information_systems
+  [LAGGED] Freedom of expression & alternative information (V-Dem), population-weighted world mean: 0.4868  (latest available 2024; NOT a 2026 value); change since 2014: -0.1165
+  [NO DATA] Share of monitored online news mentioning AI (GDELT)  -> chronos fetch gdelt --query '"artificial intelligence"' --end 20261001000000

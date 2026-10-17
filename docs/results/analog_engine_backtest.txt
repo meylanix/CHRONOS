@@ -1,0 +1,14 @@
+ANALOG ENGINE BACKTEST: next-10-year change of log_gdp_pc; 863 (entity, origin) pairs, 6 origins
+method           n    MAE   
+---------------  ---  ------
+analog_median    863  0.2362
+naive_no_change  863  0.2862
+own_trend        840  0.2651
+global_mean      863  0.2526
+vs naive_no_change: share better=0.6037, origin-clustered p=0.1925
+vs own_trend: share better=0.5357, origin-clustered p=0.03694
+vs global_mean: share better=0.533, origin-clustered p=0.1907
+Analogs have the lowest MAE. The advantage is NOT statistically significant against: naive_no_change, global_mean (only 6 origin clusters).
+note: Outcome is the change of the transformed feature (for log features: log growth over h years).
+note: Revision leakage present: current data vintages are used for all origins.
+note: Analog p10–p90 band covered 49% of outcomes (nominal 80%).

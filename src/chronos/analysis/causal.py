@@ -345,8 +345,11 @@ def _tier(r: dict[str, Any], x: str, expected: int | None) -> tuple[int, list[st
             reasons.append(f"T4: post-treatment effect {es['average_post_effect']:.4g}, pre-trends p={es['pretrend_joint_p']:.2f}, "
                            f"placebo p={es['permutation_p']:.3f}.")
         else:
-            reasons.append(f"T4 not met (post p={es.get('post_effect_p')}, pre-trend p={es.get('pretrend_joint_p')}, "
-                           f"placebo p={es.get('permutation_p')}).")
+            def f3(v: Any) -> str:
+                return "n/a" if v is None else f"{v:.3f}"
+
+            reasons.append(f"T4 not met (post-effect p={f3(es.get('post_effect_p'))}, pre-trend p={f3(es.get('pretrend_joint_p'))}, "
+                           f"placebo p={f3(es.get('permutation_p'))}).")
     return tier, reasons
 
 

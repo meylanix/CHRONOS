@@ -1,0 +1,124 @@
+SCENARIOS world_kaya  reference year 2026
+!! Conditional scenarios: each path is what the Kaya identity implies IF the stated assumptions hold. The spread shown inside a scenario comes from the stated parameter ranges; it is not a probability distribution. No probabilities are assigned to scenarios, and the set is not exhaustive.
+base: Base year 2022: latest year in which population, GDP, energy and CO2 are all observed.
+base: population: observed up to 2024; years 2023-2024 are used to check the scenario paths (hindcast).
+base: energy: observed up to 2024; years 2023-2024 are used to check the scenario paths (hindcast).
+base: co2: observed up to 2024; years 2023-2024 are used to check the scenario paths (hindcast).
+base: cumulative_co2: observed up to 2024; years 2023-2024 are used to check the scenario paths (hindcast).
+base: warming: observed up to 2024; years 2023-2024 are used to check the scenario paths (hindcast).
+
+Validation by horizon (GDP per person, from country-level extrapolation backtests):
+    5y: best baseline drift_20, median |log error| 0.08675, 80% interval coverage 0.7261 (2016 forecasts, 161 countries)
+   10y: best baseline drift_20, median |log error| 0.1414, 80% interval coverage 0.6405 (1827 forecasts, 147 countries)
+   20y: best baseline drift_20, median |log error| 0.2404, 80% interval coverage 0.5792 (1531 forecasts, 146 countries)
+   50y: best baseline drift_20, median |log error| 0.4697, 80% interval coverage 0.2769 (400 forecasts, 41 countries)
+  100y: UNVALIDATED — No adequate historical test exists for this horizon with the loaded data; values are arithmetic consequences of assumptions only.
+
+### Continuation of recent trends [trend]
+Recent (2010s-2020s) growth, efficiency and decarbonisation rates persist, with population growth slowing as the demographic transition continues.
+  assumption: GDP per person grows at its recent historical rate in the first decade, then slightly slower.
+  assumption: Energy intensity and carbon intensity keep improving at recent rates.
+  assumption: Population growth declines towards zero in the second half of the century (stipulated, not projected by CHRONOS).
+  assumption: No large war, pandemic or financial collapse changes the trajectory.
+  pop_growth (%/yr): ≤2035: 1.01 [0.86, 1.16]; ≤2050: 0.60 [0.40, 0.80]; ≤2075: 0.25 [0.00, 0.50]; ≤2126: -0.10 [-0.50, 0.30]  (derived: population CAGR 2014–2024 = 1.01)
+  gdp_pc_growth (%/yr): ≤2035: 2.00 [1.40, 2.60]; ≤2050: 1.80 [1.00, 2.50]; ≤2126: 1.50 [0.50, 2.50]  (derived: gdp_per_capita CAGR 2010–2022 = 2.00)
+  energy_intensity_change (%/yr): ≤2050: -1.60 [-2.10, -1.10]; ≤2126: -1.20 [-2.00, -0.50]  (derived: energy_intensity CAGR 2010–2022 = -1.60)
+  carbon_intensity_change (%/yr): ≤2050: -0.71 [-1.21, -0.21]; ≤2126: -1.20 [-2.50, -0.30]  (derived: carbon_intensity CAGR 2014–2024 = -0.71)
+year  population                       gdp_per_capita                   co2                              warming            
+----  -------------------------------  -------------------------------  -------------------------------  -------------------
+2031  8.757e+09 [8.695e+09–8.819e+09]  1.939e+04 [1.87e+04–2.009e+04]   4.043e+04 [3.871e+04–4.218e+04]  1.803 [1.769–1.837]
+2036  9.171e+09 [9.057e+09–9.286e+09]  2.136e+04 [2.016e+04–2.26e+04]   4.153e+04 [3.852e+04–4.469e+04]  1.896 [1.835–1.954]
+2046  9.736e+09 [9.487e+09–9.993e+09]  2.553e+04 [2.282e+04–2.827e+04]  4.178e+04 [3.597e+04–4.798e+04]  2.083 [1.971–2.193]
+2076  1.060e+10 [9.824e+09–1.145e+10]  4.038e+04 [2.963e+04–5.415e+04]  3.5e+04 [2.086e+04–5.245e+04]    2.606 [2.31–2.917] 
+2126  1.009e+10 [8.158e+09–1.248e+10]  8.502e+04 [4.45e+04–1.590e+05]   2.096e+04 [6391–4.986e+04]       3.219 [2.583–4.073]
+  mechanisms: General-purpose technology dynamics (max evidence level 2); Complementary intangible investment delays measured productivity gains (J-curve) (max evidence level 4)
+  most influential for GDP/person in 2050: gdp_pc_growth (swing 1.024e+04), pop_growth (swing 0)
+  most influential for GDP/person in 2076: gdp_pc_growth (swing 3.664e+04), pop_growth (swing 0)
+  signpost [PENDING] World GDP per person keeps growing near its recent rate (cagr in [1.2, 2.8], 2022–2030)
+  signpost [PENDING] World CO2 emissions roughly flat to slowly rising (cagr in [-0.5, 1.5], 2024–2030)
+  assumption check: consistent with 6 observations after the base year (within 2%)
+  most influential for warming in 2050: tcre (swing 0.3843 degC), gdp_pc_growth (swing 0.08374 degC), energy_intensity_change (swing 0.06673 degC)
+  most influential for warming in 2076: tcre (swing 0.7425 degC), gdp_pc_growth (swing 0.359 degC), carbon_intensity_change (swing 0.3105 degC)
+  wildcards (no probabilities): Pandemic of 2020 scale or larger; Great-power war; Global financial crisis; Abrupt AI-driven productivity jump (see ai_acceleration)
+
+### AI-accelerated productivity growth [ai_acceleration]
+Generative and later AI systems act as a general-purpose technology whose measured payoff arrives after a J-curve delay, raising world productivity growth from the 2030s.
+  assumption: Task-level productivity gains observed in 2023-2025 experiments generalise to a large share of tasks (a strong transfer assumption).
+  assumption: Complementary investment and reorganisation delay macro effects until about 2032 (J-curve).
+  assumption: Compute and energy supply expand fast enough; energy intensity improves more slowly because of data-centre demand.
+  assumption: Gains spread beyond the frontier economies.
+  pop_growth (%/yr): ≤2035: 0.85 [0.70, 1.00]; ≤2050: 0.60 [0.40, 0.80]; ≤2075: 0.25 [0.00, 0.50]; ≤2126: -0.10 [-0.50, 0.30]
+  gdp_pc_growth (%/yr): ≤2032: 2.20 [1.50, 3.00]; ≤2050: 3.50 [2.50, 5.00]; ≤2126: 2.50 [1.00, 4.00]
+  energy_intensity_change (%/yr): ≤2050: -0.80 [-1.50, 0.00]; ≤2126: -1.20 [-2.00, -0.50]
+  carbon_intensity_change (%/yr): ≤2050: -1.00 [-2.00, -0.30]; ≤2126: -1.50 [-3.00, -0.50]
+year  population                       gdp_per_capita                   co2                              warming            
+----  -------------------------------  -------------------------------  -------------------------------  -------------------
+2031  8.660e+09 [8.599e+09–8.722e+09]  1.973e+04 [1.893e+04–2.071e+04]  4.202e+04 [3.922e+04–4.46e+04]   1.806 [1.77–1.84]  
+2036  9.012e+09 [8.901e+09–9.126e+09]  2.314e+04 [2.155e+04–2.543e+04]  4.685e+04 [4.171e+04–5.256e+04]  1.906 [1.843–1.966]
+2046  9.568e+09 [9.323e+09–9.821e+09]  3.264e+04 [2.855e+04–3.971e+04]  5.856e+04 [4.728e+04–7.364e+04]  2.145 [2.015–2.283]
+2076  1.042e+10 [9.654e+09–1.125e+10]  7.117e+04 [4.677e+04–1.166e+05]  6.38e+04 [3.214e+04–1.120e+05]   3.006 [2.527–3.655]
+2126  9.912e+09 [8.016e+09–1.227e+10]  2.446e+05 [9.728e+04–6.564e+05]  5.358e+04 [1.186e+04–1.721e+05]  4.32 [2.983–6.913] 
+  mechanisms: General-purpose technology dynamics (max evidence level 2); Complementary intangible investment delays measured productivity gains (J-curve) (max evidence level 4); Task displacement and reinstatement (max evidence level 4); Uneven gains across skill levels (max evidence level 5); Falling marginal cost of reproducing and distributing information (max evidence level 5)
+  most influential for GDP/person in 2050: gdp_pc_growth (swing 2.31e+04), pop_growth (swing 0)
+  most influential for GDP/person in 2076: gdp_pc_growth (swing 1.074e+05), pop_growth (swing 0)
+  signpost [PENDING] World GDP per person growth accelerates above 2.8%/yr in 2026-2032 (cagr >= 2.8, 2026–2032)
+  signpost [PENDING] Energy use per person grows at least 1%/yr (compute demand) (cagr >= 1.0, 2026–2032)
+  assumption check: consistent with 6 observations after the base year (within 2%)
+  most influential for warming in 2050: tcre (swing 0.4629 degC), gdp_pc_growth (swing 0.1718 degC), carbon_intensity_change (swing 0.1425 degC)
+  most influential for warming in 2076: tcre (swing 1.062 degC), gdp_pc_growth (swing 0.9451 degC), carbon_intensity_change (swing 0.7057 degC)
+  wildcards (no probabilities): Capability plateau of AI systems; Severe AI-related security incident leading to restrictive regulation; Energy supply shock; Concentration of gains causing political backlash
+
+### Geopolitical fragmentation and slow growth [fragmentation]
+Trade blocs, conflict and institutional erosion lower productivity growth and slow decarbonisation.
+  assumption: Trade and technology flows fragment into blocs; diffusion of new technologies slows.
+  assumption: Productivity growth falls well below its recent rate.
+  assumption: Climate policy weakens; carbon intensity barely improves.
+  assumption: Democratic backsliding observed in V-Dem data since the 2010s continues.
+  pop_growth (%/yr): ≤2035: 0.90 [0.75, 1.05]; ≤2050: 0.70 [0.50, 0.90]; ≤2075: 0.35 [0.10, 0.60]; ≤2126: 0.00 [-0.40, 0.40]
+  gdp_pc_growth (%/yr): ≤2050: 0.80 [0.00, 1.50]; ≤2126: 0.80 [0.00, 1.80]
+  energy_intensity_change (%/yr): ≤2126: -1.00 [-1.50, -0.30]
+  carbon_intensity_change (%/yr): ≤2050: -0.30 [-1.00, 0.30]; ≤2126: -0.60 [-1.50, 0.00]
+year  population                       gdp_per_capita                   co2                              warming            
+----  -------------------------------  -------------------------------  -------------------------------  -------------------
+2031  8.690e+09 [8.629e+09–8.752e+09]  1.743e+04 [1.658e+04–1.817e+04]  3.966e+04 [3.755e+04–4.181e+04]  1.801 [1.767–1.835]
+2036  9.070e+09 [8.958e+09–9.185e+09]  1.813e+04 [1.679e+04–1.935e+04]  4.035e+04 [3.673e+04–4.418e+04]  1.892 [1.832–1.949]
+2046  9.726e+09 [9.477e+09–9.983e+09]  1.964e+04 [1.72e+04–2.194e+04]   4.112e+04 [3.458e+04–4.853e+04]  2.075 [1.966–2.188]
+2076  1.091e+10 [1.011e+10–1.178e+10]  2.494e+04 [1.863e+04–3.393e+04]  3.663e+04 [2.385e+04–5.666e+04]  2.605 [2.317–2.952]
+2126  1.091e+10 [8.829e+09–1.351e+10]  3.715e+04 [2.131e+04–7.123e+04]  2.443e+04 [1.022e+04–5.924e+04]  3.28 [2.662–4.281] 
+  mechanisms: Institutional and regulatory response with a lag (max evidence level 3); Contestation of established authorities and of information quality (max evidence level 4); Growth advantage of early-adopting places and firms (max evidence level 5)
+  most influential for GDP/person in 2050: gdp_pc_growth (swing 8390), pop_growth (swing 0)
+  most influential for GDP/person in 2076: gdp_pc_growth (swing 2.291e+04), pop_growth (swing 0)
+  signpost [PENDING] World GDP per person growth falls to 1%/yr or less in 2026-2032 (cagr <= 1.0, 2026–2032)
+  signpost [PENDING] Population-weighted electoral democracy keeps falling (V-Dem) (change <= -0.02, 2024–2030)
+  ASSUMPTION CHECK: the pure assumption path already misses observed data in 2 of 6 checks (worst: energy 2024 -3.0%). Paths are anchored to observations up to the latest observed year.
+  most influential for warming in 2050: tcre (swing 0.3773 degC), gdp_pc_growth (swing 0.09524 degC), carbon_intensity_change (swing 0.08339 degC)
+  most influential for warming in 2076: tcre (swing 0.7419 degC), gdp_pc_growth (swing 0.3848 degC), carbon_intensity_change (swing 0.3237 degC)
+  wildcards (no probabilities): Major war; Sovereign-debt crisis; Breakthrough that bypasses blocs (e.g. cheap open technologies)
+
+### Rapid decarbonisation [decarbonization]
+Carbon intensity of energy falls several times faster than in the past decades, with growth close to trend.
+  assumption: Clean electricity and electrification scale fast; carbon intensity falls 2.5%/yr to 2035 and ~5%/yr afterwards.
+  assumption: Energy efficiency improves faster than trend.
+  assumption: Growth of GDP per person close to trend.
+  assumption: Negative emissions are NOT modelled (CO2 cannot fall below zero here).
+  pop_growth (%/yr): ≤2035: 0.85 [0.70, 1.00]; ≤2050: 0.60 [0.40, 0.80]; ≤2075: 0.25 [0.00, 0.50]; ≤2126: -0.10 [-0.50, 0.30]
+  gdp_pc_growth (%/yr): ≤2050: 1.80 [1.20, 2.40]; ≤2126: 1.50 [0.50, 2.50]
+  energy_intensity_change (%/yr): ≤2126: -2.00 [-3.00, -1.20]
+  carbon_intensity_change (%/yr): ≤2035: -2.50 [-4.00, -1.50]; ≤2050: -5.00 [-8.00, -3.00]; ≤2126: -6.00 [-10.00, -3.00]
+year  population                       gdp_per_capita                   co2                              warming            
+----  -------------------------------  -------------------------------  -------------------------------  -------------------
+2031  8.660e+09 [8.599e+09–8.722e+09]  1.905e+04 [1.837e+04–1.974e+04]  3.374e+04 [3.037e+04–3.577e+04]  1.791 [1.758–1.819]
+2036  9.012e+09 [8.901e+09–9.126e+09]  2.082e+04 [1.968e+04–2.202e+04]  2.979e+04 [2.46e+04–3.305e+04]   1.862 [1.808–1.908]
+2046  9.568e+09 [9.323e+09–9.821e+09]  2.489e+04 [2.259e+04–2.739e+04]  1.849e+04 [1.201e+04–2.369e+04]  1.966 [1.876–2.041]
+2076  1.042e+10 [9.654e+09–1.125e+10]  3.937e+04 [2.95e+04–5.233e+04]   2833 [698–6693]                  2.079 [1.934–2.212]
+2126  9.912e+09 [8.016e+09–1.227e+10]  8.288e+04 [4.431e+04–1.537e+05]  93.64 [4.634–654.1]              2.097 [1.937–2.266]
+  mechanisms: Institutional and regulatory response with a lag (max evidence level 3); General-purpose technology dynamics (max evidence level 2); Falling marginal cost of reproducing and distributing information (max evidence level 5)
+  most influential for GDP/person in 2050: gdp_pc_growth (swing 8859), pop_growth (swing 0)
+  most influential for GDP/person in 2076: gdp_pc_growth (swing 3.409e+04), pop_growth (swing 0)
+  signpost [PENDING] World CO2 emissions fall at least 2%/yr in 2026-2032 (cagr <= -2.0, 2026–2032)
+  signpost [PENDING] Low-carbon share of primary energy reaches 25% by 2032 (level >= 25.0, 2032–2032)
+  ASSUMPTION CHECK: the pure assumption path already misses observed data in 3 of 6 checks (worst: co2 2024 -6.4%). Paths are anchored to observations up to the latest observed year.
+  most influential for warming in 2050: tcre (swing 0.2541 degC), carbon_intensity_change (swing 0.117 degC), energy_intensity_change (swing 0.06636 degC)
+  most influential for warming in 2076: tcre (swing 0.3211 degC), carbon_intensity_change (swing 0.2675 degC), energy_intensity_change (swing 0.1208 degC)
+  wildcards (no probabilities): Backlash against climate policy; Major nuclear accident; Breakthrough in storage or fusion
+experiment: ad98c5ee5e42-20261017T091310

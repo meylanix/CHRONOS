@@ -56,8 +56,9 @@ def diebold_mariano(e1: ArrayLike, e2: ArrayLike, h: int, power: int = 1) -> dic
     """
     d = np.abs(_arr(e1)) ** power - np.abs(_arr(e2)) ** power
     n = d.size
-    if n < 8:
-        return {"n": n, "statistic": math.nan, "p_value": math.nan, "note": "too few paired forecasts"}
+    if n < max(8, 2 * h):
+        return {"n": n, "statistic": math.nan, "p_value": math.nan,
+                "note": f"too few paired forecasts ({n}) for a reliable test at horizon {h} (need >= {max(8, 2 * h)})"}
     dbar = d.mean()
     dc = d - dbar
     gamma = [float(np.dot(dc[k:], dc[: n - k]) / n) for k in range(max(1, h))]

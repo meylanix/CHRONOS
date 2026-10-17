@@ -250,6 +250,9 @@ def _verdict(hres: dict[str, Any], models: Sequence[Model], baselines: list[str]
         p = cmp["diebold_mariano"].get("p_value") if cmp else None
         significant = beats and p is not None and not math.isnan(p) and p < 0.05
         candidates[m.name] = {"beats_best_baseline": beats, "dm_p_value": p, "significant_at_5pct": significant}
+        if beats and significant and cmp is not None:
+            notes.append(f"{m.name} beats the best simple baseline ({best_baseline}): relative MAE "
+                         f"{cmp['relative_MAE']:.2f}, DM p={p:.3g} (on this series and horizon only).")
         if not beats:
             notes.append(f"{m.name} does NOT beat the best simple baseline ({best_baseline}); prefer the baseline.")
         elif not significant:
